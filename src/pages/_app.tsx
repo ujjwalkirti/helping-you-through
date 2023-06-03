@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import "@/styles/globals.css";
+import { montserrat } from "@/utils/Fonts";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -32,7 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       {loading && <Loader />}
-      <div>
+      <div className={montserrat.className}>
         <Navbar />
         <Component {...pageProps} />
         <Footer />
