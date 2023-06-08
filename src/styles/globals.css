@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.carouselItem {
+    
+}
+
+.react-multi-carousel-item {
+  padding: 40px 40px 40px 0;
+  padding-bottom: 90px;
+  padding-top: 80px;
+  /* margin: 0 4rem 0 4rem; */
+  min-width: 300px;
+
+  /* margin: 40px; */
+  /* max-height: 200px; */
+}
+
+.gd-carousel-wrapper {
+  position: relative;
+}
+
+.gd-carousel {
+  position: unset;
+
+  .react-multiple-carousel__arrow {
+    position: absolute;
+  }
+
+  .react-multiple-carousel__arrow--left {
+    left: calc(90% + 1px);
+    top: 7px;
+    border: 3px solid greenyellow;
+    background-color: #20b15a;
+  }
+
+  .react-multiple-carousel__arrow--right {
+    right: calc(10% + 1px);
+    top: 7px;
+    border: 3px solid greenyellow;
+    background-color: #20b15a;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .one {
+    text-align: center;
+    /* align-items: center; */
+  }
+}
