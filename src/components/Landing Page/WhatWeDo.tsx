@@ -1,7 +1,7 @@
 import React from "react";
 
-const WhatWeDo = () => {
-  return <div>WhatWeDo</div>;
-};
+function WhatWeDo() {
+  return <div className={`bg-white text-yellow-400 dark:bg-black `}>WhatWeDo</div>;
+}
 
 export default WhatWeDo;
