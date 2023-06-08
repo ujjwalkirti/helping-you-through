@@ -3,6 +3,7 @@ import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import "@/styles/globals.css";
 import { montserrat } from "@/utils/Fonts";
+import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -31,13 +32,13 @@ export default function App({ Component, pageProps }: AppProps) {
     };
   }, [router]);
   return (
-    <>
+    <ThemeProvider defaultTheme="light" attribute="class">
       {loading && <Loader />}
       <div className={montserrat.className}>
         <Navbar />
         <Component {...pageProps} />
         <Footer />
       </div>
-    </>
+    </ThemeProvider>
   );
 }
