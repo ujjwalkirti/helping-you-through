@@ -81,7 +81,11 @@ const Navbar = () => {
           <div className="w-3/12">
             <CloseIcon onClick={handleClickIcon} className="float-right text-4xl" />
           </div>
-          <div className="fixed right-1 top-14">
+        </>
+        }
+      </div>
+
+      {!icon &&  <div className=" absolute right-1 top-14 p-1">
             <ul className="flex flex-col justify-evenly items-center cursor-pointer">
               <li className="pb-2">Services</li>
               <li className="pb-2">About</li>
@@ -89,11 +93,7 @@ const Navbar = () => {
               <li className="pb-2"><Avatar /></li>
               <li className="pb-2"><Switch onClick={handleToggle} /></li>
             </ul>
-          </div>
-        </>
-        }
-
-      </div>
+          </div>}
 
     </div>
   </>
