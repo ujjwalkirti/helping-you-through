@@ -179,6 +179,7 @@ const Testimonials = () => {
       </div>
     </div>
   );
+  return <div>Testimonials</div>;
 };
 
 export default Testimonials;
