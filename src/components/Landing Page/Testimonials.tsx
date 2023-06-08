@@ -1,8 +1,4 @@
 import React from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import Avatar from "@mui/material/Avatar";
-import "react-multi-carousel/lib/styles.css";
 
 const Testimonials = () => {
   const TestimonialData = [
@@ -179,7 +175,6 @@ const Testimonials = () => {
       </div>
     </div>
   );
-  return <div>Testimonials</div>;
 };
 
 export default Testimonials;
