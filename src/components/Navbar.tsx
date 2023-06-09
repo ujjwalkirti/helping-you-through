@@ -7,7 +7,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useTheme } from "next-themes";
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
-  const [icon, setIcon] = useState(false);
+  const [icon, setIcon] = useState(true);
   const handleClickIcon = () => {
     setIcon(!icon);
   }

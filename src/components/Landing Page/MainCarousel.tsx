@@ -20,21 +20,23 @@ const MainCarousel = () => {
           <div className="mt-8"><Button style={{ borderRadius: '1rem', padding: '1rem', backgroundColor: '#20B15A' }} variant="contained" >Get Started</Button></div>
 
         </div>
-        <div className="w-7/12">
-          <RectangleIcon className="absolute bg-[#20B15A] text-[#20B15A] w-[10px] h-[10px] transform rotate-45 top-[15%] right-[30%] "  />
-          <RectangleIcon className="absolute bg-[#FF8345] text-[#FF8345] w-[10px] h-[10px] transform rotate-45 bottom-[5%] right-[10%] "  />
-          <RectangleIcon className="absolute bg-[#20B15A] text-[#20B15A] w-[10px] h-[10px] transform rotate-45 top-[30%] left-[50%] "  />
-          <RectangleIcon className="absolute bg-[#20B15A] text-[#20B15A] w-[10px] h-[10px] transform rotate-45 top-[70%] right-[40%] "  />
-          <StarBorderIcon className=" bg-[#FF8345] text-white w-[40px] h-[42px] absolute top-[30%] right-[38%] rounded-xl p-2 transform rotate-45 " />
-          <CheckIcon className="absolute bg-[#20B15A] text-white top-[40%] right-[10%] w-[40px] h-[42px] rounded-xl p-3" color="success" />
-          <BusinessCenterIcon className="absolute  bg-[#20B15A] text-white  w-[40px] h-[42px] rounded-xl p-2 transform -rotate-45 bottom-[5%] right-[45%] " />
-          <img src="../../../assests/lady.png" alt="lady.png" srcSet="" />
+        <div className="w-7/12 relative">
 
+          <div className="relative">
+            <img src="../../../assests/lady.png" alt="lady.png" srcSet="" />
+            <RectangleIcon className="absolute bg-[#20B15A] text-[#20B15A] w-[10px] h-[10px] transform rotate-45 bottom-32 left-32 " />
+            <RectangleIcon className="absolute bg-[#FF8345] text-[#FF8345] w-[10px] h-[10px] transform rotate-45 bottom-20 right-32 " />
+            <RectangleIcon className="absolute bg-[#20B15A] text-[#20B15A] w-[10px] h-[10px] transform rotate-45 top-0 left-auto " />
+            <RectangleIcon className="absolute bg-[#20B15A] text-[#20B15A] w-[10px] h-[10px] transform rotate-45 top-8 right-36 " />
+            <StarBorderIcon className=" bg-[#FF8345] text-white w-[40px] h-[42px] absolute top-10 left-32 rounded-xl p-2 transform rotate-45 " />
+            <CheckIcon className="absolute bg-[#20B15A] text-white top-32 right-20 w-[40px] h-[42px] rounded-xl p-3" color="success" />
+            <BusinessCenterIcon className="absolute  bg-[#20B15A] text-white  w-[40px] h-[42px] rounded-xl p-2 transform -rotate-45 bottom-4 left-24 " />
+          </div>
         </div>
       </div>
     </div>
 
-    <div className={"md:hidden pt-[3.3rem] flex flex-col items-center justify-center bg-[#D7F5DC] px-3 "+poppins.className}>
+    <div className={"md:hidden pt-[3.3rem] flex flex-col items-center justify-center bg-[#D7F5DC] px-3 " + poppins.className}>
       <div className="w-full h-full ">
         <img className="object-cover" src="../../../assests/lady.png" alt="lady.png" srcSet="" />
       </div>
