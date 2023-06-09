@@ -20,9 +20,9 @@ function WhatWeDo(): JSX.Element {
 
     </div>
 
-    <div className=" flex-1 md:flex pt-3 pb-3 mt-3 mb-1 mr-3 ml-3">
+    <div className=" flex-1 md:flex pt-3 pb-3 mt-3 mb-1 sm:py-16 sm:px-16">
 
-      <div className="py-0 px-28 flex-1 text-center sm:text-left ">
+      <div className="py-0 px-0 sm:px-10 sm:py-10 flex-1 text-center sm:text-left ">
 
         <div className="justify-center">
           <svg className="max-w-full sm:max-w-none h-auto sm:mx-0 mx-auto" width="108" height="108" viewBox="0 0 108 108" fill="none">
@@ -36,7 +36,7 @@ function WhatWeDo(): JSX.Element {
           previous year papers
         </div>
 
-        <div className=" max-w-xs text-black dark:text-white text-xs font-normal mt-1 mb-3 ml-1 mr-1  poppins.className">
+        <div className=" sm:max-w-xs text-black dark:text-white text-xs font-normal mt-1 mb-3 ml-1 mr-1  poppins.className">
           We help you to download the previous year papers department wise
         </div>
 
@@ -53,7 +53,7 @@ function WhatWeDo(): JSX.Element {
 
        </div>
 
-      <div className="text-center sm:text-left py-0 px-28 flex-1">
+      <div className="text-center sm:px-10 sm:py-10 sm:text-left py-0 px-0 flex-1">
 
 
         <div className="justify-center">
@@ -69,7 +69,7 @@ function WhatWeDo(): JSX.Element {
         </div>
 
 
-        <div className="max-w-xs text-black dark:text-white text-xs font-regular mt-1 mb-3 ml-1 mr-1 poppins.className">
+        <div className="sm:max-w-xs text-black dark:text-white text-xs font-regular mt-1 mb-3 ml-1 mr-1 poppins.className">
           We help to sell your old books or any stationary items
         </div>
 
@@ -87,7 +87,7 @@ function WhatWeDo(): JSX.Element {
 
      </div>
 
-      <div className="text-center sm:text-left py-0 px-28 flex-1">
+      <div className="text-center sm:px-10 sm:py-10 sm:text-left py-0 px-0 flex-1">
 
         <div className="justify-center">
           <svg className="max-w-full sm:max-w-none h-auto sm:mx-0 mx-auto" width="108" height="106" viewBox="0 0 108 106" fill="none">
@@ -102,7 +102,7 @@ function WhatWeDo(): JSX.Element {
         </div>
 
 
-        <div className="max-w-xs text-black dark:text-white text-xs font-regular mt-1 mb-3 ml-1 mr-1 poppins.className">
+        <div className="sm:max-w-xs text-black dark:text-white text-xs font-regular mt-1 mb-3 ml-1 mr-1 poppins.className">
           We help you to sell your old cycles or vehicles
         </div>
 
@@ -120,8 +120,8 @@ function WhatWeDo(): JSX.Element {
 
       </div>
     </div>
-    <div className="flex-1 md:flex pt-3 pb-3 mt-3 mb-1 mr-3 ml-3">
-      <div className="py-0 px-28 flex-1 text-center  ">
+    <div className="flex-1 md:flex pt-3 pb-3 mt-3 mb-1 mr-auto ml-auto">
+      <div className="py-0 px-0 flex-1 text-center  ">
         <div>
           <svg className="max-w-full  h-auto  mx-auto" fill="#808080" height="100px" width="100px" version="1.1" id="Capa_1"  viewBox="0 0 300.25 300.25" stroke="#808080" strokeWidth="0.0030025000000000004">
             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -141,7 +141,7 @@ function WhatWeDo(): JSX.Element {
         </div>
       </div>
       <div className=" md:w-0.5 md:h-auto w-auto h-0.5 bg-grey dark:bg-grey"></div>
-      <div className="py-0 px-28 flex-1 text-center ">
+      <div className="py-0 px-0 flex-1 text-center ">
         <div>
           <svg className="max-w-full  h-auto  mx-auto" fill="#808080" version="1.1" id="Capa_1" width="100px" height="100px" viewBox="0 0 478.248 478.248" stroke="#808080">
             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
@@ -159,7 +159,7 @@ function WhatWeDo(): JSX.Element {
         </div>
       </div>
       <div className=" md:w-0.5 md:h-auto w-auto h-0.5 bg-grey dark:bg-grey"></div>
-      <div className="py-0 px-28 flex-1 text-center">
+      <div className="py-0 px-0 flex-1 text-center">
       <div>
           <svg className="max-w-full  h-auto  mx-auto " fill="#808080" height="100px" width="100px" viewBox="-8 0 32 32" version="1.1" stroke="#808080">
             <g id="SVGRepo_bgCarrier" strokeWidth="0">
@@ -181,7 +181,7 @@ function WhatWeDo(): JSX.Element {
 
       </div>
       <div className=" md:w-0.5 md:h-auto w-auto h-0.5 bg-grey dark:bg-grey"></div>
-      <div className="py-0 px-28 flex-1 text-center">
+      <div className="py-0 px-0 flex-1 text-center">
       <div>
           <svg className="max-w-full  h-auto  mx-auto" version="1.0" id="Layer_1" width="80px" height="80px" viewBox="0 0 64 64" enableBackground="new 0 0 64 64"  fill="#808080" stroke="#808080">
             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round">
