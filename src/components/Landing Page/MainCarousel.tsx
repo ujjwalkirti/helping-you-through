@@ -5,12 +5,20 @@ import CheckIcon from "@mui/icons-material/Check";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import RectangleIcon from "@mui/icons-material/Rectangle";
 import React from "react";
+import { useTheme } from "next-themes";
 
 const MainCarousel = () => {
+  const { theme } = useTheme();
   return (
     <>
       <div className={"hidden md:block " + poppins.className}>
-        <div className="flex py-14 text-black bg-[#D7F5DC] dark:bg-[#20B15A] dark:text-white ">
+        <div
+          className="flex py-14 text-black bg-[#D7F5DC] dark:bg-[#20B15A] dark:text-white "
+          style={{
+            backgroundColor: theme == "dark" ? "#20B15A" : "#d7f5dc",
+            color: theme === "dark" ? "white" : "black",
+          }}
+        >
           <div className="flex-col justify-evenly w-5/12  p-10">
             <div className="">
               <h1 className="font-bold text-5xl leading-[1.3]   ">
@@ -30,7 +38,8 @@ const MainCarousel = () => {
                 style={{
                   borderRadius: "1rem",
                   padding: "1rem",
-                  backgroundColor: "#20B15A",
+                  backgroundColor: theme === "dark" ? "white" : "#20B15A",
+                  color: theme === "dark" ? "#20B15A" : "white",
                 }}
                 variant="contained"
               >

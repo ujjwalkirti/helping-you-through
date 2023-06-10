@@ -7,6 +7,7 @@ import Doubt from "@/../../public/assests/doubt.jpg";
 import Feedback from "@/../../public/assests/feedback.jpg";
 import { poppins } from "@/utils/Fonts";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 const OurFeatures = () => {
   const Image1 = Books.src;
@@ -16,8 +17,15 @@ const OurFeatures = () => {
   const Image5 = Doubt.src;
   const Image6 = Feedback.src;
 
+  const { theme } = useTheme();
+
   return (
-    <>
+    <div
+      style={{
+        color: theme === "dark" ? "white" : "black",
+        backgroundColor: theme === "dark" ? "white" : "black",
+      }}
+    >
       <h1 className=" text-2xl sm:text-4xl lg:text-5xl text-center font-extrabold uppercase text-[#20B15A] bg-[#D7F5DC] dark:bg-[#000]">
         OUR FEATURES
       </h1>
@@ -211,7 +219,7 @@ const OurFeatures = () => {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

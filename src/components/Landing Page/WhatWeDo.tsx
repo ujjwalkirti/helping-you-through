@@ -2,10 +2,18 @@ import React from "react";
 import "tailwindcss/tailwind.css";
 import { montserrat } from "@/utils/Fonts";
 import { poppins } from "@/utils/Fonts";
+import { useTheme } from "next-themes";
 
 function WhatWeDo(): JSX.Element {
+  const { theme } = useTheme();
   return (
-    <div className=" bg-white dark:bg-black ">
+    <div
+      className=" bg-white dark:bg-black "
+      style={{
+        backgroundColor: theme === "dark" ? "black" : "white",
+        color: theme === "dark" ? "white" : "black",
+      }}
+    >
       <div className="text-center sm:text-left pt-4">
         <div
           className={` text-dgreen dark:text-dgreen text-2xl font-medium mt-1 ml-3 mr-3 mb-1 ${montserrat.className}`}
@@ -15,7 +23,7 @@ function WhatWeDo(): JSX.Element {
 
         <div
           className={
-            " text-black dark:text-white text-xl font-semibold mt-1 ml-3 mr-3 mb-1 sm:max-w-xs " +
+            "text-xl font-semibold mt-1 ml-3 mr-3 mb-1 sm:max-w-xs " +
             poppins.className
           }
         >
@@ -52,7 +60,7 @@ function WhatWeDo(): JSX.Element {
 
           <div
             className={
-              " text-black dark:text-white text-xl font-semibold mt-1 mb-1 ml-1 mr-1  " +
+              "text-xl font-semibold mt-1 mb-1 ml-1 mr-1  " +
               poppins.className
             }
           >
@@ -61,7 +69,7 @@ function WhatWeDo(): JSX.Element {
 
           <div
             className={
-              " sm:max-w-xs text-black dark:text-white text-xs font-normal mt-1 mb-3 ml-1 mr-1 " +
+              " sm:max-w-xs text-xs font-normal mt-1 mb-3 ml-1 mr-1 " +
               poppins.className
             }
           >
@@ -70,7 +78,7 @@ function WhatWeDo(): JSX.Element {
 
           <div className=" mt-1 mb-1 ml-1 mr-1">
             <a href="#">
-              <button className="hover:bg-orange px-3 py-3 rounded-xl text-xs font-normal text-black dark:text-white">
+              <button className="hover:bg-orange px-3 py-3 rounded-xl text-xs font-normal">
                 Learn More{" "}
                 <svg
                   className=" inline "
@@ -120,19 +128,19 @@ function WhatWeDo(): JSX.Element {
 
           <div
             className={
-              " text-black dark:text-white text-xl font-semibold mt-1 mb-1 ml-1 mr-1 poppins.className "
+              "text-xl font-semibold mt-1 mb-1 ml-1 mr-1 poppins.className "
             }
           >
             old book and stationary
           </div>
 
-          <div className="sm:max-w-xs text-black dark:text-white text-xs font-regular mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className="sm:max-w-xs text-xs font-regular mt-1 mb-3 ml-1 mr-1 poppins.className">
             We help to sell your old books or any stationary items
           </div>
 
           <div className=" mt-1 mb-1 ml-1 mr-1">
             <a href="#">
-              <button className="hover:bg-orange px-3 py-3 rounded-xl text-xs font-normal text-black dark:text-white">
+              <button className="hover:bg-orange px-3 py-3 rounded-xl text-xs font-normal">
                 Learn More{" "}
                 <svg
                   className=" inline "
@@ -182,19 +190,19 @@ function WhatWeDo(): JSX.Element {
 
           <div
             className={
-              " text-black dark:text-white text-xl font-semibold mt-1 mb-1 ml-1 mr-1 poppins.className "
+              "text-xl font-semibold mt-1 mb-1 ml-1 mr-1 poppins.className "
             }
           >
             vehicles for sell
           </div>
 
-          <div className="sm:max-w-xs text-black dark:text-white text-xs font-regular mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className="sm:max-w-xs text-xs font-regular mt-1 mb-3 ml-1 mr-1 poppins.className">
             We help you to sell your old cycles or vehicles
           </div>
 
           <div className=" mt-1 mb-1 ml-1 mr-1">
             <a href="#">
-              <button className="hover:bg-orange px-3 py-3 rounded-xl text-xs font-normal text-black dark:text-white">
+              <button className="hover:bg-orange px-3 py-3 rounded-xl text-xs font-normal">
                 Learn More{" "}
                 <svg
                   className=" inline "
@@ -243,7 +251,7 @@ function WhatWeDo(): JSX.Element {
               </g>
             </svg>
           </div>
-          <div className=" text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className="text-base font-semibold mt-1 mb-3 ml-1 mr-1 poppins.className">
             vehicles for sell
           </div>
           <div className=" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1 poppins.className">
@@ -286,7 +294,7 @@ function WhatWeDo(): JSX.Element {
               </g>
             </svg>
           </div>
-          <div className=" text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className="text-base font-semibold mt-1 mb-3 ml-1 mr-1 poppins.className">
             Testimonials
           </div>
           <div className=" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1 poppins.className">
