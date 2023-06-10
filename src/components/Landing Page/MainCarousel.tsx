@@ -13,7 +13,7 @@ const MainCarousel = () => {
     <>
       <div className={"hidden md:block " + poppins.className}>
         <div
-          className="flex py-14 text-black bg-[#D7F5DC] dark:bg-[#20B15A] dark:text-white "
+          className="flex py-14"
           style={{
             backgroundColor: theme == "dark" ? "#20B15A" : "#d7f5dc",
             color: theme === "dark" ? "white" : "black",

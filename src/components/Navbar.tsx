@@ -13,6 +13,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [icon, setIcon] = useState(true);
@@ -24,11 +25,21 @@ const Navbar = () => {
   };
 
   return (
-    <>
+    <div
+      style={{
+        backgroundColor: theme == "dark" ? "#20B15A" : "#d7f5dc",
+        color: theme === "dark" ? "white" : "black",
+      }}
+    >
       <div className={"hidden md:block " + poppins.className}>
-        <div className="flex h-18 py-3 text-black bg-[#D7F5DC]  dark:bg-black dark:text-white ">
-          <div className="w-2/12 flex pl-3 items-center ">
-            <img className="" src="" alt="logo.png" srcSet="" />
+        <div className="flex justify-between items-center px-3 h-18 py-3">
+          <div className="w-10 h-10 relative flex pl-3 items-center ">
+            <Image
+              className=" rounded-full"
+              fill
+              src="/logo.jpg"
+              alt="Website's logo"
+            />
           </div>
           <div className="rounded-3xl bg-white w-3/12 items-center cursor-pointer flex pl-3">
             <SearchIcon className="text-lg" />
@@ -113,7 +124,7 @@ const Navbar = () => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -20,12 +20,7 @@ const OurFeatures = () => {
   const { theme } = useTheme();
 
   return (
-    <div
-      style={{
-        color: theme === "dark" ? "white" : "black",
-        backgroundColor: theme === "dark" ? "white" : "black",
-      }}
-    >
+    <div>
       <h1 className=" text-2xl sm:text-4xl lg:text-5xl text-center font-extrabold uppercase text-[#20B15A] bg-[#D7F5DC] dark:bg-[#000]">
         OUR FEATURES
       </h1>
