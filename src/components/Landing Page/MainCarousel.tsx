@@ -6,12 +6,13 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import RectangleIcon from "@mui/icons-material/Rectangle";
 import React from "react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const MainCarousel = () => {
   const { theme } = useTheme();
   return (
     <>
-      <div className={"hidden md:block " + poppins.className}>
+      <div className={"hidden lg:block " + poppins.className}>
         <div
           className="flex py-14"
           style={{
@@ -48,35 +49,34 @@ const MainCarousel = () => {
             </div>
           </div>
           <div className="w-7/12 relative">
-            <div className="relative">
-              <img src="../../../assests/lady.png" alt="lady.png" srcSet="" />
-              <RectangleIcon className="absolute bg-[#20B15A] text-[#20B15A] w-[10px] h-[10px] transform rotate-45 bottom-32 left-32 " />
-              <RectangleIcon className="absolute bg-[#FF8345] text-[#FF8345] w-[10px] h-[10px] transform rotate-45 bottom-20 right-32 " />
-              <RectangleIcon className="absolute bg-[#20B15A] text-[#20B15A] w-[10px] h-[10px] transform rotate-45 top-0 left-auto " />
-              <RectangleIcon className="absolute bg-[#20B15A] text-[#20B15A] w-[10px] h-[10px] transform rotate-45 top-8 right-36 " />
-              <StarBorderIcon className=" bg-[#FF8345] text-white w-[40px] h-[42px] absolute top-10 left-32 rounded-xl p-2 transform rotate-45 " />
-              <CheckIcon
-                className="absolute bg-[#20B15A] text-white top-32 right-20 w-[40px] h-[42px] rounded-xl p-3"
-                color="success"
-              />
-              <BusinessCenterIcon className="absolute  bg-[#20B15A] text-white  w-[40px] h-[42px] rounded-xl p-2 transform -rotate-45 bottom-4 left-24 " />
-            </div>
+            <Image src="/assests/lady.png" alt="lady.png" width={800} height={800} />
+            <RectangleIcon style={{ width: '10px', height: '10px' }} className={`absolute w-96 h-10 transform rotate-45 bottom-32 left-32 ${theme == "dark" ? "bg-[#a586c0] text-[#a586c0]" : "bg-[#20B15A] text-[#20B15A]"} `} />
+            <RectangleIcon style={{ width: '10px', height: '10px' }} className="absolute bg-[#FF8345] text-[#FF8345] w-[10px] h-[10px] transform rotate-45 bottom-20 right-32 " />
+            <RectangleIcon style={{ width: '10px', height: '10px' }} className={`absolute  w-[10px] h-[10px] transform rotate-45 top-0 left-auto ${theme == "dark" ? "bg-[#a586c0] text-[#a586c0]" : "bg-[#20B15A] text-[#20B15A]"} `} />
+            <RectangleIcon style={{ width: '10px', height: '10px' }} className={`absolute  w-[10px] h-[10px] transform rotate-45 top-8 right-36 ${theme == "dark" ? "bg-[#a586c0] text-[#a586c0]" : "bg-[#20B15A] text-[#20B15A]"} `} />
+            <StarBorderIcon style={{ width: '40px', height: '40px' }} className=" bg-[#FF8345] text-white absolute top-10 left-32 rounded-xl p-2 transform rotate-45 " />
+            <CheckIcon style={{ width: '40px', height: '40px' }}
+              className={`absolute  top-32 right-20  rounded-xl p-3 ${theme == "dark" ? "bg-[#a586c0] text-[white]" : "bg-[#20B15A] text-[white]"} `}
+              color="success"
+            />
+            <BusinessCenterIcon style={{ width: '40px', height: '40px' }} className={`absolute  rounded-xl p-2 transform -rotate-45 bottom-4 left-24 ${theme == "dark" ? "bg-[#a586c0] text-[white]" : "bg-[#20B15A] text-[white]"} `} />
           </div>
         </div>
       </div>
 
+      {/* responsive implementaion */}
       <div
-        className={
-          "md:hidden pt-[3.3rem] flex flex-col items-center justify-center bg-[#D7F5DC] px-3 " +
+        className={`lg:hidden pt-[3.3rem] flex flex-col items-center justify-center ${theme == "dark" ? "bg-[#20B15A] text-white" : "bg-[#d7f5dc] text-black"} px-3 ` +
           poppins.className
         }
       >
         <div className="w-full h-full ">
-          <img
+          <Image
             className="object-cover"
-            src="../../../assests/lady.png"
+            src="/assests/lady.png"
             alt="lady.png"
-            srcSet=""
+            height={500}
+            width={500}
           />
         </div>
         <div className="w-full ">
@@ -86,7 +86,11 @@ const MainCarousel = () => {
           </p>
         </div>
         <div className="w-full">
-          <Button className="rounded-xl  bg-[#20B15A]" variant="contained">
+          <Button style={{
+            marginBottom:'1rem',
+            backgroundColor: theme === "dark" ? "white" : "#20B15A",
+            color: theme === "dark" ? "#20B15A" : "white"
+          }} className="rounded-xl" variant="contained">
             Get Started
           </Button>
         </div>
