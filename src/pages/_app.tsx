@@ -10,9 +10,11 @@ import { useEffect, useState } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
+    setMounted(true);
     const handleStart = () => {
       setLoading(true);
     };
@@ -34,11 +36,13 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider defaultTheme="light" attribute="class">
       {loading && <Loader />}
-      <div className={montserrat.className}>
-        <Navbar />
-        <Component {...pageProps} />
-        <Footer />
-      </div>
+      {mounted && (
+        <div className={montserrat.className}>
+          <Navbar />
+          <Component {...pageProps} />
+          <Footer />
+        </div>
+      )}
     </ThemeProvider>
   );
 }

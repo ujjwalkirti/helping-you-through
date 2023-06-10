@@ -6,16 +6,17 @@ import { poppins } from "@/utils/Fonts";
 function WhatWeDo(): JSX.Element {
   return (
     <div className=" bg-white dark:bg-black ">
-      <div className="text-center sm:text-left pt-4 mt-6">
+      <div className="text-center sm:text-left pt-4">
         <div
-          className={` text-dgreen dark:text-dgreen text-2xl font-medium mt-1 ml-3 mr-3 mb-1 montserrat.className`}
+          className={` text-dgreen dark:text-dgreen text-2xl font-medium mt-1 ml-3 mr-3 mb-1 ${montserrat.className}`}
         >
           What We Do
         </div>
 
         <div
           className={
-            " text-black dark:text-white text-xl font-semibold mt-1 ml-3 mr-3 mb-1 sm:max-w-xs  poppins.className "
+            " text-black dark:text-white text-xl font-semibold mt-1 ml-3 mr-3 mb-1 sm:max-w-xs " +
+            poppins.className
           }
         >
           We provide you a platform where you can sell,buy your old products!
@@ -51,13 +52,19 @@ function WhatWeDo(): JSX.Element {
 
           <div
             className={
-              " text-black dark:text-white text-xl font-semibold mt-1 mb-1 ml-1 mr-1  poppins.className "
+              " text-black dark:text-white text-xl font-semibold mt-1 mb-1 ml-1 mr-1  " +
+              poppins.className
             }
           >
             previous year papers
           </div>
 
-          <div className=" sm:max-w-xs text-black dark:text-white text-xs font-normal mt-1 mb-3 ml-1 mr-1  poppins.className">
+          <div
+            className={
+              " sm:max-w-xs text-black dark:text-white text-xs font-normal mt-1 mb-3 ml-1 mr-1 " +
+              poppins.className
+            }
+          >
             We help you to download the previous year papers department wise
           </div>
 
