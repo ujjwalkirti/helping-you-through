@@ -12,13 +12,9 @@ const MainCarousel = () => {
   const { theme } = useTheme();
   return (
     <>
-      <div className={"hidden lg:block " + poppins.className}>
+      <div className={"hidden w-full lg:block " + poppins.className}>
         <div
-          className="flex py-14"
-          style={{
-            backgroundColor: theme == "dark" ? "#20B15A" : "#d7f5dc",
-            color: theme === "dark" ? "white" : "black",
-          }}
+          className=" flex py-14 dark:bg-[#20B15A] dark:text-white text-black bg-[#d7f5dc]"
         >
           <div className="flex-col justify-evenly w-5/12  p-10">
             <div className="">
@@ -35,13 +31,7 @@ const MainCarousel = () => {
             </div>
 
             <div className="mt-8">
-              <Button
-                style={{
-                  borderRadius: "1rem",
-                  padding: "1rem",
-                  backgroundColor: theme === "dark" ? "white" : "#20B15A",
-                  color: theme === "dark" ? "#20B15A" : "white",
-                }}
+              <Button className="p-4 rounded-xl text-white dark:bg-white bg-[#20B15A] dark:text-[#20B15A] "
                 variant="contained"
               >
                 Get Started
@@ -50,16 +40,16 @@ const MainCarousel = () => {
           </div>
           <div className="w-7/12 relative">
             <Image src="/assests/lady.png" alt="lady.png" width={800} height={800} />
-            <RectangleIcon style={{ width: '10px', height: '10px' }} className={`absolute w-96 h-10 transform rotate-45 bottom-32 left-32 ${theme == "dark" ? "bg-[#a586c0] text-[#a586c0]" : "bg-[#20B15A] text-[#20B15A]"} `} />
+            <RectangleIcon style={{ width: '10px', height: '10px' }} className="absolute w-96 h-10 transform rotate-45 bottom-32 left-32  dark:bg-[#a586c0] dark:text-[#a586c0] bg-[#20B15A] text-[#20B15A]" />
             <RectangleIcon style={{ width: '10px', height: '10px' }} className="absolute bg-[#FF8345] text-[#FF8345] w-[10px] h-[10px] transform rotate-45 bottom-20 right-32 " />
-            <RectangleIcon style={{ width: '10px', height: '10px' }} className={`absolute  w-[10px] h-[10px] transform rotate-45 top-0 left-auto ${theme == "dark" ? "bg-[#a586c0] text-[#a586c0]" : "bg-[#20B15A] text-[#20B15A]"} `} />
-            <RectangleIcon style={{ width: '10px', height: '10px' }} className={`absolute  w-[10px] h-[10px] transform rotate-45 top-8 right-36 ${theme == "dark" ? "bg-[#a586c0] text-[#a586c0]" : "bg-[#20B15A] text-[#20B15A]"} `} />
+            <RectangleIcon style={{ width: '10px', height: '10px' }} className="absolute  w-[10px] h-[10px] transform rotate-45 top-0 left-auto dark:bg-[#a586c0] dark:text-[#a586c0] bg-[#20B15A] text-[#20B15A] " />
+            <RectangleIcon style={{ width: '10px', height: '10px' }} className="absolute  w-[10px] h-[10px] transform rotate-45 top-8 right-36 dark:bg-[#a586c0] dark:text-[#a586c0] bg-[#20B15A] text-[#20B15A] " />
             <StarBorderIcon style={{ width: '40px', height: '40px' }} className=" bg-[#FF8345] text-white absolute top-10 left-32 rounded-xl p-2 transform rotate-45 " />
             <CheckIcon style={{ width: '40px', height: '40px' }}
-              className={`absolute  top-32 right-20  rounded-xl p-3 ${theme == "dark" ? "bg-[#a586c0] text-[white]" : "bg-[#20B15A] text-[white]"} `}
+              className="absolute  top-32 right-20  rounded-xl p-3  dark:bg-[#a586c0] text-white bg-[#20B15A]"
               color="success"
             />
-            <BusinessCenterIcon style={{ width: '40px', height: '40px' }} className={`absolute  rounded-xl p-2 transform -rotate-45 bottom-4 left-24 ${theme == "dark" ? "bg-[#a586c0] text-[white]" : "bg-[#20B15A] text-[white]"} `} />
+            <BusinessCenterIcon style={{ width: '40px', height: '40px' }} className="absolute  rounded-xl p-2 transform -rotate-45 bottom-4 left-24 dark:bg-[#a586c0] text-white bg-[#20B15A] " />
           </div>
         </div>
       </div>
@@ -87,7 +77,7 @@ const MainCarousel = () => {
         </div>
         <div className="w-full">
           <Button style={{
-            marginBottom:'1rem',
+            marginBottom: '1rem',
             backgroundColor: theme === "dark" ? "white" : "#20B15A",
             color: theme === "dark" ? "#20B15A" : "white"
           }} className="rounded-xl" variant="contained">

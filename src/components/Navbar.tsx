@@ -17,10 +17,10 @@ import Image from "next/image";
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [icon, setIcon] = useState(true);
-  const [checked,setChecked]=useState(true);
+  const [checked, setChecked] = useState(true);
   const handleClickIcon = () => {
     setIcon(!icon);
-    
+
   };
   const handleToggle = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -29,8 +29,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={`hidden lg:block ${theme == "dark" ? "bg-[#20B15A] text-white" : "bg-[#d7f5dc] text-black"} ` + poppins.className}>
-        <div className="flex justify-between items-center px-3 h-18 py-3">
+      <div className={"w-full hidden lg:block dark:bg-[#20B15A] dark:text-white  bg-[#d7f5dc] text-black" + poppins.className}>
+        <div className="mx-auto flex justify-between items-center px-3 h-18 py-3">
           <div className="w-10 h-10 relative flex pl-3 items-center ">
             <Image
               className=" rounded-full"
@@ -39,7 +39,7 @@ const Navbar = () => {
               alt="Website's logo"
             />
           </div>
-          <div className="rounded-3xl bg-white h-8  w-3/12 items-center cursor-pointer flex pl-3">
+          <div className="rounded-3xl bg-white h-10  w-3/12 items-center cursor-pointer flex pl-3">
             <SearchIcon className="text-lg text-black" />
             <input
               placeholder="Search for PYQ's,Review's ,Old Book's"
@@ -49,7 +49,7 @@ const Navbar = () => {
           <div className=" w-5/12 flex  list-none justify-evenly items-center cursor-pointer">
             <li className="w-[33%]">
               <FormControl fullWidth>
-                <InputLabel><p className={`${theme == "dark" ? "text-white" :"text-black"}`}>Services</p></InputLabel>
+                <InputLabel><p className="dark:text-white text-black">Services</p></InputLabel>
                 <Select>
                   <MenuItem >One</MenuItem>
                   <MenuItem >Two</MenuItem>
@@ -72,13 +72,10 @@ const Navbar = () => {
         </div>
       </div>
 
-
-      
-
       {/* Responsiveness implementation */}
-      <div className={"lg:hidden +" + poppins.className}>
-        <div className={`flex w-full float-left justify-evenly items-center ${theme == "dark" ? "bg-[#20B15A] text-white" : "bg-[#d7f5dc] text-black"}`}>
-        <div className="w-2/12 relative float-left flex items-center mt-[5px] ">
+      <div className={"w-full lg:hidden +" + poppins.className}>
+        <div className="mx-auto flex justify-center items-center dark:bg-[#20B15A]  dark:text-white bg-[#d7f5dc] text-black">
+          <div className="w-2/12 relative flex items-center mt-[5px] ">
             <Image
               className=" object-cover rounded-full"
               width={30}
@@ -87,7 +84,7 @@ const Navbar = () => {
               alt="Website's logo"
             />
           </div>
-          <div className="w-8/12 rounded-3xl bg-white items-center cursor-pointer flex mx-auto mt-[5px] ">
+          <div className="w-8/12  rounded-3xl bg-white items-center cursor-pointer flex mx-auto mt-[5px] ">
             <SearchIcon className="text-lg text-black" />
             <input
               placeholder="Search for PYQ's,Review's ,Old Book's"
@@ -131,7 +128,7 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      </>
+    </>
   );
 };
 

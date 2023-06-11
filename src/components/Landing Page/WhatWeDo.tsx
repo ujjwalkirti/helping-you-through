@@ -9,10 +9,6 @@ function WhatWeDo(): JSX.Element {
   return (
     <div
       className=" bg-white dark:bg-black "
-      style={{
-        backgroundColor: theme === "dark" ? "black" : "white",
-        color: theme === "dark" ? "white" : "black",
-      }}
     >
       <div className="text-center sm:text-left pt-4">
         <div
@@ -128,13 +124,13 @@ function WhatWeDo(): JSX.Element {
 
           <div
             className={
-              "text-xl font-semibold mt-1 mb-1 ml-1 mr-1 poppins.className "
+              "text-xl font-semibold mt-1 mb-1 ml-1 mr-1 "+poppins.className 
             }
           >
             old book and stationary
           </div>
 
-          <div className="sm:max-w-xs text-xs font-regular mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className={"sm:max-w-xs text-xs font-regular mt-1 mb-3 ml-1 mr-1 "+poppins.className}>
             We help to sell your old books or any stationary items
           </div>
 
@@ -190,13 +186,13 @@ function WhatWeDo(): JSX.Element {
 
           <div
             className={
-              "text-xl font-semibold mt-1 mb-1 ml-1 mr-1 poppins.className "
+              "text-xl font-semibold mt-1 mb-1 ml-1 mr-1 "+poppins.className 
             }
           >
             vehicles for sell
           </div>
 
-          <div className="sm:max-w-xs text-xs font-regular mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className={"sm:max-w-xs text-xs font-regular mt-1 mb-3 ml-1 mr-1 "+poppins.className}>
             We help you to sell your old cycles or vehicles
           </div>
 
@@ -251,10 +247,10 @@ function WhatWeDo(): JSX.Element {
               </g>
             </svg>
           </div>
-          <div className="text-base font-semibold mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className={"text-base font-semibold mt-1 mb-3 ml-1 mr-1 "+poppins.className}>
             vehicles for sell
           </div>
-          <div className=" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className={" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1 "+poppins.className}>
             100+
           </div>
         </div>
@@ -294,10 +290,10 @@ function WhatWeDo(): JSX.Element {
               </g>
             </svg>
           </div>
-          <div className="text-base font-semibold mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className={"text-base font-semibold mt-1 mb-3 ml-1 mr-1 " +poppins.className}>
             Testimonials
           </div>
-          <div className=" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className={" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1 " +poppins.className}>
             100+
           </div>
         </div>
@@ -324,10 +320,10 @@ function WhatWeDo(): JSX.Element {
               </g>
             </svg>
           </div>
-          <div className=" text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className={" text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1 "+poppins.className}>
             previous year paper
           </div>
-          <div className=" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className={"text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1 "+poppins.className}>
             2015-2023
           </div>
         </div>
@@ -378,10 +374,10 @@ function WhatWeDo(): JSX.Element {
               </g>
             </svg>
           </div>
-          <div className=" text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className={"text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1 "+ poppins.className}>
             old book and stationary
           </div>
-          <div className=" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1 poppins.className">
+          <div className={"text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1 "+poppins.className}>
             100+
           </div>
         </div>
