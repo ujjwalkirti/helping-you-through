@@ -2,7 +2,7 @@ import React from "react";
 import 'tailwindcss/tailwind.css';
 import { montserrat } from "@/utils/Fonts";
 import { poppins } from "@/utils/Fonts";
-
+import Link from 'next/link';
 
 
 function WhatWeDo(): JSX.Element {
@@ -36,19 +36,19 @@ function WhatWeDo(): JSX.Element {
             previous year papers
           </div>
 
-          <div className={" sm:max-w-xs text-black dark:text-white text-xs font-normal mt-1 mb-3 ml-1 mr-1"+ poppins.className}>
+          <div className={" sm:max-w-xs text-black dark:text-white text-xs font-normal mt-1 mb-3 ml-1 mr-1"}>
             We help you to download the previous year papers department wise
           </div>
 
           <div className=" mt-1 mb-1 ml-1 mr-1">
-            <a href="#">
+            <Link href="/">
               <button className="hover:bg-orange px-3 py-3 rounded-xl text-xs font-normal text-black dark:text-white">
                 Learn More    <svg className=" inline " width="17" height="12" viewBox="0 0 22 19" fill="none">
-                  <path stroke="black" d="M12.0912 1.68591L20.1149 9.70966L12.0912 17.7334M1.7749 9.70966H20.1149H1.7749Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path className=" stroke-black dark:stroke-white" d="M12.0912 1.68591L20.1149 9.70966L12.0912 17.7334M1.7749 9.70966H20.1149H1.7749Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
 
               </button>
-            </a>
+            </Link>
           </div>
 
         </div>
@@ -69,20 +69,20 @@ function WhatWeDo(): JSX.Element {
           </div>
 
 
-          <div className={"sm:max-w-xs text-black dark:text-white text-xs font-regular mt-1 mb-3 ml-1 mr-1 "+poppins.className}>
+          <div className={"sm:max-w-xs text-black dark:text-white text-xs font-regular mt-1 mb-3 ml-1 mr-1 "}>
             We help to sell your old books or any stationary items
           </div>
 
 
           <div className=" mt-1 mb-1 ml-1 mr-1">
-            <a href="#">
-              <button className={"hover:bg-orange px-3 py-3 rounded-xl text-xs font-normal text-black dark:text-white"+poppins.className}>
+            <Link href="/">
+              <button className={"hover:bg-orange px-3 py-3 rounded-xl text-xs font-normal text-black dark:text-white"}>
                 Learn More   <svg className=" inline " width="17" height="12" viewBox="0 0 22 19" fill="none">
-                  <path stroke="black" d="M12.0912 1.68591L20.1149 9.70966L12.0912 17.7334M1.7749 9.70966H20.1149H1.7749Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path className=" stroke-black dark:stroke-white" d="M12.0912 1.68591L20.1149 9.70966L12.0912 17.7334M1.7749 9.70966H20.1149H1.7749Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
 
               </button>
-            </a>
+            </Link>
           </div>
 
         </div>
@@ -102,20 +102,20 @@ function WhatWeDo(): JSX.Element {
           </div>
 
 
-          <div className={"sm:max-w-xs text-black dark:text-white text-xs font-regular mt-1 mb-3 ml-1 mr-1"+poppins.className}>
+          <div className={"sm:max-w-xs text-black dark:text-white text-xs font-regular mt-1 mb-3 ml-1 mr-1"}>
             We help you to sell your old cycles or vehicles
           </div>
 
 
           <div className=" mt-1 mb-1 ml-1 mr-1">
-            <a href="#">
-              <button className={"hover:bg-orange px-3 py-3 rounded-xl text-xs font-normal text-black dark:text-white"+poppins.className}>
+            <Link href="/">
+              <button className={"hover:bg-orange px-3 py-3 rounded-xl text-xs font-normal text-black dark:text-white"}>
                 Learn More   <svg className=" inline " width="17" height="12" viewBox="0 0 22 19" fill="none">
-                  <path stroke="black" d="M12.0912 1.68591L20.1149 9.70966L12.0912 17.7334M1.7749 9.70966H20.1149H1.7749Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path className=" stroke-black dark:stroke-white" d="M12.0912 1.68591L20.1149 9.70966L12.0912 17.7334M1.7749 9.70966H20.1149H1.7749Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
 
               </button>
-            </a>
+            </Link>
           </div>
 
         </div>
@@ -135,7 +135,7 @@ function WhatWeDo(): JSX.Element {
           <div className={" text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1"+ poppins.className}>
             vehicles for sell
           </div>
-          <div className={" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1"+poppins.className}>
+          <div className={" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1"}>
             100+
           </div>
         </div>
@@ -153,7 +153,7 @@ function WhatWeDo(): JSX.Element {
           <div className={" text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1"+ poppins.className}>
             Testimonials
           </div>
-          <div className={" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1"+poppins.className}>
+          <div className={" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1"}>
             100+
           </div>
         </div>
@@ -174,7 +174,7 @@ function WhatWeDo(): JSX.Element {
           <div className={" text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1"+ poppins.className}>
             previous year paper
           </div>
-          <div className={" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1"+ poppins.className}>
+          <div className={" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1"}>
             2015-2023
           </div>
 
@@ -195,7 +195,7 @@ function WhatWeDo(): JSX.Element {
           <div className={" text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1"+ poppins.className}>
             old book and stationary
           </div>
-          <div className={" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1"+ poppins.className}>
+          <div className={" text-dgreen dark:text-dgreen text-xl mt-1 mb-3 ml-1 mr-1"}>
             100+
           </div>
         </div>
