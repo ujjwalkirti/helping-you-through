@@ -33,6 +33,7 @@ const MainCarousel = () => {
             <div className="mt-8">
               <Button className="p-4 rounded-xl text-white dark:bg-white bg-[#20B15A] dark:text-[#20B15A] "
                 variant="contained"
+                color="success"
               >
                 Get Started
               </Button>
@@ -78,12 +79,7 @@ const MainCarousel = () => {
           </p>
         </div>
         <div className="w-full pl-4">
-          <Button style={{
-            marginBottom: '1rem',
-            // backgroundColor: theme === "dark" ? "white" : "#20B15A", 
-            
-           
-          }} className="rounded-xl dark:text-[#20B15A] dark:bg-white text-white bg-[#20B15A] mb-[1rem]" variant="contained">
+          <Button color="success" className="rounded-xl dark:text-[#20B15A] dark:bg-white text-white bg-[#20B15A] mb-[1rem]" variant="contained">
             Get Started
           </Button>
         </div>
