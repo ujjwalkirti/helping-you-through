@@ -12,7 +12,7 @@ const Testimonials = () => {
   const testimonials = TestimonialData.map((el) => (
     <div
       key={el.id}
-      className=" bg-white dark:bg-[#20B15A]  p-3 rounded-2xl shadow-md drop-shadow-lg h-full flex flex-col justify-between text-black dark:text-[white] "
+      className=" bg-white dark:bg-[#20B15A]  p-3 rounded-2xl shadow-md drop-shadow-lg  flex flex-col justify-between text-black dark:text-[white] "
     >
       <div>
         <p className="px-7 text-sm font-medium">{el.review}</p>
@@ -24,7 +24,7 @@ const Testimonials = () => {
           alt="Remy Sharp"
           src="/assests/lady.png" //{el.imageurl}
           // edher next.config.js me change karne kah raha
-          className="mr-2 rounded-full"
+          className="mr-2 rounded-full object-cover"
         />
         <div className=" font-semibold ">
           <p>{el.name}</p>

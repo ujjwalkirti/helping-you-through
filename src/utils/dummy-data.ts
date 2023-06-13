@@ -108,7 +108,7 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 3,
-    slidesToSlide: 2,
+    slidesToSlide: 1,
   },
   tablet: {
     breakpoint: { max: 1024, min: 612 },
