@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import Testimonials from "@/components/Landing Page/Testimonials";
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import "@/styles/globals.css";
@@ -8,11 +9,17 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
+
+
+
+
 export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
+    setMounted(true);
     const handleStart = () => {
       setLoading(true);
     };
