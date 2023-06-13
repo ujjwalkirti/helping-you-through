@@ -12,11 +12,11 @@ const MainCarousel = () => {
   const { theme } = useTheme();
   return (
     <>
-      <div className={"hidden w-full lg:block " + poppins.className}>
+      <div className={"hidden  lg:block dark:bg-[#20B15A] dark:text-white text-black bg-[#d7f5dc] " + poppins.className}>
         <div
-          className=" flex py-14 dark:bg-[#20B15A] dark:text-white text-black bg-[#d7f5dc]"
+          className=" flex py-14 w-5/6 mx-auto"
         >
-          <div className="flex-col justify-evenly w-5/12  p-10">
+          <div className="flex-col justify-evenly w-5/12  p-10 px-0">
             <div className="">
               <h1 className="font-bold text-5xl leading-[1.3]   ">
                 Helping you Through
@@ -55,11 +55,13 @@ const MainCarousel = () => {
       </div>
 
       {/* responsive implementaion */}
+      
       <div
-        className={`lg:hidden pt-[3.3rem] flex flex-col items-center justify-center ${theme == "dark" ? "bg-[#20B15A] text-white" : "bg-[#d7f5dc] text-black"} px-3 ` +
+        className={`lg:hidden w-full mx-auto pt-[3.3rem] flex flex-col items-center justify-center dark:bg-[#20B15A] dark:text-white bg-[#d7f5dc] text-black px-3` +
           poppins.className
         }
       >
+        
         <div className="w-full h-full ">
           <Image
             className="object-cover"
@@ -70,21 +72,23 @@ const MainCarousel = () => {
           />
         </div>
         <div className="w-full ">
-          <p className=" font-[600] leading-6 py-2">
+          <p className=" font-[600] leading-6 py-2 pl-4 ">
             Introducing the ultimate college life platform, designed to simplify
             your journey and make every day a breeze.
           </p>
         </div>
-        <div className="w-full">
+        <div className="w-full pl-4">
           <Button style={{
             marginBottom: '1rem',
-            backgroundColor: theme === "dark" ? "white" : "#20B15A",
-            color: theme === "dark" ? "#20B15A" : "white"
-          }} className="rounded-xl" variant="contained">
+            // backgroundColor: theme === "dark" ? "white" : "#20B15A", 
+            
+           
+          }} className="rounded-xl dark:text-[#20B15A] dark:bg-white text-white bg-[#20B15A] mb-[1rem]" variant="contained">
             Get Started
           </Button>
         </div>
       </div>
+      
     </>
   );
 };
