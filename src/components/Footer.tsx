@@ -7,7 +7,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Image from "next/image";
 
 const Footer = () => {
-  return <div className=" mx-auto bg-[#20B15A]">
+  return <div className=" mx-auto bg-[#20B15A] mt-5">
     <Image src="/assests/helping.png" alt="Helping Hand " height={150} width={80} className="mx-auto py-3"  />
 <h1 className="font-bold text-3xl text-center text-[#D8E9A8] dark:text-white leading-[1.3]   " style={{fontFamily:'IM FELL DW Pica SC',}}>
                 Helping you Through

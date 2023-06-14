@@ -26,7 +26,7 @@ const SubscriptionAndFeedback = () => {
     <div className={"w-full text-[#044A42] dark:bg-black dark:text-[#20B15A] " + poppins.className}>
       <div className="w-10/12 mx-auto flex ">
         <div className="w-6/12 flex-col">
-          <Image width={800} height={800} src="/assests/improvement.png" alt="feed.pic" />
+          <Image width={800} height={800} src="/assests/feedback.png" alt="feed.pic" />
           <div className=" flex w-fit mx-auto px-3 text-center mt-4 font ">
             <p className=" leading-[1.5] text-xl">
               Any improverment to make it <br /> better for our student
@@ -64,7 +64,7 @@ const SubscriptionAndFeedback = () => {
     <div className={" w-full flex justify-center items-center text-[#044A42] dark:bg-black dark:text-[#20B15A] "+poppins.className}>
       <div className="flex-col justify-center">
         <div className="">
-        <Image width={300} height={300} src="/assests/improvement.png" alt="feed.pic" />
+        <Image width={300} height={300} src="/assests/feedback.png" alt="feed.pic" />
         </div>
         <div className="list-none flex-col text-center justify-center mt-2">
         <li className="py-2">
