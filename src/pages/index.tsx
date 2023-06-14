@@ -5,12 +5,10 @@ import Testimonials from "@/components/Landing Page/Testimonials";
 import WhatWeDo from "@/components/Landing Page/WhatWeDo";
 import Head from "next/head";
 
-
-
 export default function Home() {
   return (
     <>
-      <Head>
+      <Head children={undefined}>
         <title>Helping you thorugh!</title>
       </Head>
       <MainCarousel />
