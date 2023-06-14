@@ -8,7 +8,7 @@ import Link from 'next/link';
 function WhatWeDo(): JSX.Element {
   return  ( 
   <>
-  <div className=" bg-white dark:bg-black ">
+  <div className=" bg-white dark:bg-black w-5/6 mx-auto ">
       <div className="text-center sm:text-left pt-4 mt-6">
 
         <div className={"text-dgreen dark:text-dgreen text-2xl font-medium mt-1 ml-3 mr-3 mb-1 " +
