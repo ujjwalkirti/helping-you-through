@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.carouselItem {
 
-}
 
 .react-multi-carousel-item {
   padding: 40px 40px 40px 0;
