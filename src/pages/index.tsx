@@ -8,7 +8,7 @@ import Head from "next/head";
 export default function Home() {
   return (
     <>
-      <Head children={undefined}>
+      <Head>
         <title>Helping you thorugh!</title>
       </Head>
       <MainCarousel />
