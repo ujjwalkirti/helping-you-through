@@ -127,7 +127,7 @@ const developers = [
     position: "Adviosr",
     year: "passout",
     branch: "Civil Engineering",
-    imgUrl: "/assets/me.png",
+    imgUrl: "/assests/me.png",
     socials: [
       "https://github.com/ujjwalkirti",
       "https://www.linkedin.com/in/ujjwal-kirti/",
@@ -141,7 +141,7 @@ const developers = [
     position: "Adviosr",
     year: "passout",
     branch: "Civil Engineering",
-    imgUrl: "/assets/me.png",
+    imgUrl: "/assests/me.png",
     socials: [
       "https://github.com/ujjwalkirti",
       "https://www.linkedin.com/in/ujjwal-kirti/",
@@ -155,7 +155,7 @@ const developers = [
     position: "Adviosr",
     year: "passout",
     branch: "Civil Engineering",
-    imgUrl: "/assets/me.png",
+    imgUrl: "/assests/me.png",
     socials: [
       "https://github.com/ujjwalkirti",
       "https://www.linkedin.com/in/ujjwal-kirti/",
@@ -169,7 +169,7 @@ const developers = [
     position: "Adviosr",
     year: "passout",
     branch: "Civil Engineering",
-    imgUrl: "/assets/me.png",
+    imgUrl: "/assests/me.png",
     socials: [
       "https://github.com/ujjwalkirti",
       "https://www.linkedin.com/in/ujjwal-kirti/",
@@ -183,7 +183,7 @@ const developers = [
     position: "Adviosr",
     year: "passout",
     branch: "Civil Engineering",
-    imgUrl: "/assets/me.png",
+    imgUrl: "/assests/me.png",
     socials: [
       "https://github.com/ujjwalkirti",
       "https://www.linkedin.com/in/ujjwal-kirti/",
@@ -197,7 +197,7 @@ const developers = [
     position: "Adviosr",
     year: "passout",
     branch: "Civil Engineering",
-    imgUrl: "/assets/me.png",
+    imgUrl: "/assests/me.png",
     socials: [
       "https://github.com/ujjwalkirti",
       "https://www.linkedin.com/in/ujjwal-kirti/",
@@ -211,7 +211,7 @@ const developers = [
     position: "Adviosr",
     year: "passout",
     branch: "Civil Engineering",
-    imgUrl: "/assets/me.png",
+    imgUrl: "/assests/me.png",
     socials: [
       "https://github.com/ujjwalkirti",
       "https://www.linkedin.com/in/ujjwal-kirti/",
@@ -225,7 +225,7 @@ const developers = [
     position: "Adviosr",
     year: "passout",
     branch: "Civil Engineering",
-    imgUrl: "/assets/me.png",
+    imgUrl: "/assests/me.png",
     socials: [
       "https://github.com/ujjwalkirti",
       "https://www.linkedin.com/in/ujjwal-kirti/",
@@ -239,7 +239,7 @@ const developers = [
     position: "Adviosr",
     year: "passout",
     branch: "Civil Engineering",
-    imgUrl: "/assets/me.png",
+    imgUrl: "/assests/me.png",
     socials: [
       "https://github.com/ujjwalkirti",
       "https://www.linkedin.com/in/ujjwal-kirti/",
@@ -253,7 +253,7 @@ const developers = [
     position: "Adviosr",
     year: "passout",
     branch: "Civil Engineering",
-    imgUrl: "/assets/me.png",
+    imgUrl: "/assests/me.png",
     socials: [
       "https://github.com/ujjwalkirti",
       "https://www.linkedin.com/in/ujjwal-kirti/",
@@ -267,7 +267,7 @@ const developers = [
     position: "Adviosr",
     year: "passout",
     branch: "Civil Engineering",
-    imgUrl: "/assets/me.png",
+    imgUrl: "/assests/me.png",
     socials: [
       "https://github.com/ujjwalkirti",
       "https://www.linkedin.com/in/ujjwal-kirti/",

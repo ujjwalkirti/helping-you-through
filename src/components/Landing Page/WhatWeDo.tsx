@@ -182,8 +182,8 @@ function WhatWeDo(): JSX.Element {
         <div className=" md:w-0.5 md:h-auto w-auto h-0.5 bg-grey dark:bg-grey"></div>
         <div className="py-0 px-0 flex-1 text-center">
           <div>
-          <svg className="max-w-full  h-auto  mx-auto" width="102px" height="102px" viewBox="0 0 70 70"  baseProfile="full" enable-background="new 0 0 76.00 76.00"  fill="#808080" stroke="#808080">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <svg className="max-w-full  h-auto  mx-auto" width="102px" height="102px" viewBox="0 0 70 70"  baseProfile="full" enableBackground="new 0 0 76.00 76.00"  fill="#808080" stroke="#808080">
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
             <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
             <g id="SVGRepo_iconCarrier">
                <path fill="#808080" fillOpacity="1" strokeWidth="0.2" strokeLinejoin="round" d="M 22,19L 24,19L 24,57L 22,57L 22,19 Z M 26,57L 26,19.0001L 53.9999,19.0001L 53.9999,57L 26,57 Z M 30,24L 30,27L 50,27L 50,24L 30,24 Z M 30,32L 30,35L 33,35L 33,32L 30,32 Z M 36,32L 36,35L 49,35L 49,32L 36,32 Z M 30,40L 30,43L 33,43L 33,40L 30,40 Z M 36,40L 36,43L 48,43L 48,40L 36,40 Z M 30,48L 30,51L 33,51L 33,48L 30,48 Z M 36,48L 36,51L 50,51L 50,48L 36,48 Z "></path> 
