@@ -124,7 +124,7 @@ const developers = [
   {
     name: "Ujjwal Kirti",
     designation: "Lead Developer",
-    position: "Adviosr",
+    position: "Advisor",
     year: "passout",
     branch: "Civil Engineering",
     imgUrl: "/assests/me.png",
@@ -138,7 +138,7 @@ const developers = [
   {
     name: "Ujjwal Kirti",
     designation: "Lead Developer",
-    position: "Adviosr",
+    position: "Advisor",
     year: "passout",
     branch: "Civil Engineering",
     imgUrl: "/assests/me.png",
@@ -152,7 +152,7 @@ const developers = [
   {
     name: "Ujjwal Kirti",
     designation: "Lead Developer",
-    position: "Adviosr",
+    position: "Advisor",
     year: "passout",
     branch: "Civil Engineering",
     imgUrl: "/assests/me.png",
@@ -166,7 +166,7 @@ const developers = [
   {
     name: "Ujjwal Kirti",
     designation: "Lead Developer",
-    position: "Adviosr",
+    position: "Advisor",
     year: "passout",
     branch: "Civil Engineering",
     imgUrl: "/assests/me.png",
@@ -180,7 +180,7 @@ const developers = [
   {
     name: "Ujjwal Kirti",
     designation: "Lead Developer",
-    position: "Adviosr",
+    position: "Advisor",
     year: "passout",
     branch: "Civil Engineering",
     imgUrl: "/assests/me.png",
@@ -194,7 +194,7 @@ const developers = [
   {
     name: "Ujjwal Kirti",
     designation: "Lead Developer",
-    position: "Adviosr",
+    position: "Advisor",
     year: "passout",
     branch: "Civil Engineering",
     imgUrl: "/assests/me.png",
@@ -208,7 +208,7 @@ const developers = [
   {
     name: "Ujjwal Kirti",
     designation: "Lead Developer",
-    position: "Adviosr",
+    position: "Advisor",
     year: "passout",
     branch: "Civil Engineering",
     imgUrl: "/assests/me.png",
@@ -222,7 +222,7 @@ const developers = [
   {
     name: "Ujjwal Kirti",
     designation: "Lead Developer",
-    position: "Adviosr",
+    position: "Advisor",
     year: "passout",
     branch: "Civil Engineering",
     imgUrl: "/assests/me.png",
@@ -236,7 +236,7 @@ const developers = [
   {
     name: "Ujjwal Kirti",
     designation: "Lead Developer",
-    position: "Adviosr",
+    position: "Advisor",
     year: "passout",
     branch: "Civil Engineering",
     imgUrl: "/assests/me.png",
@@ -250,7 +250,7 @@ const developers = [
   {
     name: "Ujjwal Kirti",
     designation: "Lead Developer",
-    position: "Adviosr",
+    position: "Advisor",
     year: "passout",
     branch: "Civil Engineering",
     imgUrl: "/assests/me.png",
@@ -264,7 +264,7 @@ const developers = [
   {
     name: "Ujjwal Kirti",
     designation: "Lead Developer",
-    position: "Adviosr",
+    position: "Advisor",
     year: "passout",
     branch: "Civil Engineering",
     imgUrl: "/assests/me.png",

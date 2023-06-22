@@ -11,7 +11,9 @@ const Developers = () => {
       </Head>
       <section>
         {/* heading */}
-        <p>Developers and Desingers</p>
+        <p className="text-3xl md:text-5xl lg:text-7xl font-bold text-center my-5">
+          Developers and Designers
+        </p>
         {/* looping over dummy data and passing each object to DeveloperCard.tsx component */}
         <div>
           {developers.map((developer, index) => {

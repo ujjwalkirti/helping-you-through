@@ -34,7 +34,12 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider defaultTheme="light" attribute="class">
       {loading && <Loader />}
-      <div className={montserrat.className}>
+      <div
+        className={
+          "text-black dark:text-white bg-white dark:bg-black  " +
+          montserrat.className
+        }
+      >
         <Navbar />
         <Component {...pageProps} />
         <Footer />
