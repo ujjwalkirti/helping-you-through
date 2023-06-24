@@ -66,7 +66,7 @@ const Navbar = () => {
               <Avatar />
             </li>
             <li className="">
-              <Switch checked={checked} onChange={handleToggle} />
+              <Switch checked={!checked} onChange={handleToggle} />
             </li>
           </div>
         </div>
@@ -113,7 +113,7 @@ const Navbar = () => {
         </div>
 
         {!icon && (
-          <div className=" absolute right-1 top-14 p-1">
+          <div className="absolute right-1 top-14 p-1">
             <ul className="flex flex-col justify-evenly items-center cursor-pointer">
               <li className="pb-2">Services</li>
               <li className="pb-2">About</li>
@@ -122,7 +122,7 @@ const Navbar = () => {
                 <Avatar />
               </li>
               <li className="pb-2">
-                <Switch checked={checked} onChange={handleToggle} />
+                <Switch checked={!checked} onChange={handleToggle} />
               </li>
             </ul>
           </div>
