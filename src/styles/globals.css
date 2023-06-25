@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.carouselItem {
 
+}
 
 .react-multi-carousel-item {
-  padding: 40px 40px 40px 0;
-  padding-bottom: 90px;
+  /* padding: 40px 40px 40px 0; */
+  padding: 20px;
+  /* padding-bottom: 40px; */
   padding-top: 80px;
   width: 100%;
 
@@ -43,4 +46,12 @@
     text-align: center;
     /* align-items: center; */
   }
+  .gd-carousel .react-multiple-carousel__arrow--left {
+    left: calc(10% + 1px);
+    top: 7px;
+    border: 3px solid greenyellow;
+    background-color: #20b15a;
 }
+
+}
+

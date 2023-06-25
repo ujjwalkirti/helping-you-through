@@ -62,7 +62,7 @@ const Testimonials = () => {
             draggable={true}
             arrows={true}
             keyBoardControl={true}
-            removeArrowOnDeviceType={["mobile"]}
+            // removeArrowOnDeviceType={["mobile","tablet"]}
             className="gd-carousel"
           >
             {testimonials}
