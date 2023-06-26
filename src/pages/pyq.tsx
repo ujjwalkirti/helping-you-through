@@ -9,7 +9,7 @@ const PreviousYearQuestions = () => {
       <Head>
         <title>Previous Year Question Papers</title>
       </Head>
-      <section>
+      <section className="">
         {/* heading */}
         <p>Previous Year Paper</p>
         {/* Find Previous Year Paper */}
