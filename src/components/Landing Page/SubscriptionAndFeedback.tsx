@@ -84,6 +84,7 @@ const SubscriptionAndFeedback = () => {
               <textarea rows={5} className="w-full p-1  border rounded-xl mt-2 " placeholder="Please  provide Suggestion" />
             </li>
         </div>
+        <Button variant="contained" color="warning" className="text-white bg-[#FF8345] mt-5 mx-0.5">Send Message</Button>
       </div>
     </div>
     </div>
