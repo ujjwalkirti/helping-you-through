@@ -22,7 +22,7 @@ const SubscriptionAndFeedback = () => {
     </div>;
 
     {/* feedback */}
-    <p className="text-[#20B15A] text-center mb-16">FEEDBACK</p>
+    <p className="text-[#20B15A] text-center pb-16">FEEDBACK</p>
     <div className={"w-full text-[#044A42] dark:bg-black dark:text-[#20B15A] " + poppins.className}>
       <div className="w-10/12 mx-auto flex ">
         <div className="w-6/12 flex-col">
@@ -33,7 +33,7 @@ const SubscriptionAndFeedback = () => {
             </p>
           </div>
         </div>
-        <div className="w-6/12 list-none items-center ">
+        <div className="w-6/12 list-none items-center pb-5">
           <div className="w-8/12 flex-col float-right">
             <li className="py-2">
               <p>Name</p>
@@ -66,7 +66,7 @@ const SubscriptionAndFeedback = () => {
         <div className="">
         <Image width={300} height={300} src="/assests/feedback.png" alt="feed.pic" />
         </div>
-        <div className="list-none flex-col text-center justify-center mt-2">
+        <div className="list-none flex-col text-center justify-center mt-2 pb-5">
         <li className="py-2">
               <p>Name</p>
               <input className="w-full p-1 h-8 border rounded-xl mt-2 " type="text" placeholder="Enter Name" />

@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className=" mx-auto bg-[#20B15A] mt-5">
+    <div className=" mx-auto bg-[#20B15A] pt-5">
       <Image
         src="/assests/helping.png"
         alt="Helping Hand "
@@ -69,16 +69,16 @@ const Footer = () => {
           </p>
           <div className="flex flex-row sm:flex-col">
             <Link href="" className="pt-1 text-lg items-center mx-1">
-              <LinkedInIcon className="mr-1 text-[#1d4ed8] text-4xl" />
+              <LinkedInIcon className="mr-1 text-white text-4xl" />
               <span className="hidden sm:inline-block">LinkedIn</span>
             </Link>
             <Link href="" className="pt-1 text-lg items-center mx-1">
-              <InstagramIcon className="text-[#e11d48] mr-1 text-4xl" />
+              <InstagramIcon className="text-white mr-1 text-4xl" />
               <span className="hidden sm:inline-block">Instagram</span>
             </Link>
             <Link href="" className="pt-1 text-lg items-center mx-1">
               {" "}
-              <GitHubIcon className="mr-2 text-4xl text-[#000]" />
+              <GitHubIcon className="mr-2 text-4xl text-white" />
               <span className="hidden sm:inline-block">Github</span>
             </Link>
             <Link href="" className="pt-1 text-lg items-center mx-1">

@@ -394,4 +394,94 @@ const reviews = [
       "The student, Rahul Gupta (U21CS005), has made significant progress in understanding software engineering principles. They actively engage in problem-solving activities and have good teamwork skills.",
   },
 ];
-export { developers, DepartmentName, TestimonialData, responsive, reviews };
+const Departments=[
+  { 
+    id:1,
+    name:"Computer Science And Engineering",
+    branch:"CSE",
+    sem:[
+      {id:1,sub:["FCP", "Applied Chemistry", "MLFO", "Enginnering Mathematics-I"]},
+      {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:8,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+    ],
+  type:["end", "mid"],
+
+  },
+  {
+    id:2,
+    name:"Mechanical Engineering",
+    branch:"ME",
+
+     sem:[
+      {id:1,sub:["FCP", "Applied Chemistry", "MLFO", "Enginnering Mathematics-I"]},
+      {id:2,sub:["Wokshop", "Mechanics","English Communication", "WebDev"]},
+      {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:8,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+    ],
+  type:["end", "mid"],
+  
+  },
+  {
+    id:3,
+    name:"Computer Science And Engineering",
+    branch:"CSE",
+     sem:[
+      {id:1,sub:["FCP", "Applied Chemistry", "MLFO", "Enginnering Mathematics-I"]},
+      {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:8,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+    ],
+  type:["end", "mid"],
+  
+  },
+  {
+    id:4,
+    name:"Computer Science And Engineering",
+    branch:"CSE",
+    sem:[
+      {id:1,sub:["FCP", "Applied Chemistry", "MLFO", "Enginnering Mathematics-I"]},
+      {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:8,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+    ],
+  type:["end", "mid"],
+  
+  },
+  {
+    id:5,
+    name:"Computer Science And Engineering",
+    branch:"CSE",
+     sem:[
+      {id:1,sub:["FCP", "Applied Chemistry", "MLFO", "Enginnering Mathematics-I"]},
+      {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:8,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+    ],
+  type:["end", "mid"],
+  
+  }
+
+];
+
+export { developers,Departments, DepartmentName, TestimonialData, responsive, reviews };

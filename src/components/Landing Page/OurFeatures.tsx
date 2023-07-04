@@ -20,7 +20,7 @@ const OurFeatures = () => {
   const { theme } = useTheme();
 
   return (
-    <div>
+    <div className="pt-10">
       <h1 className=" text-2xl sm:text-4xl lg:text-5xl text-center font-extrabold uppercase text-[#20B15A] bg-[#D7F5DC] dark:bg-[#000]">
         OUR FEATURES
       </h1>
@@ -29,7 +29,7 @@ const OurFeatures = () => {
       </p>
       <div
         className={
-          "w-full flex  flex-col sm:flex-row justify-evenly items-center h-[1050px] sm:h-[700px] md:h-[400px] bg-[#D7F5DC] dark:bg-[#000] " +
+          "w-full flex  flex-col sm:flex-row justify-evenly  pt-5 items-center h-[1050px] sm:h-[700px] md:h-[400px] bg-[#D7F5DC] dark:bg-[#000] " +
           poppins.className
         }
       >
