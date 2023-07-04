@@ -3,6 +3,7 @@ import React from "react";
 import supabase from "@/utils/supaBase";
 import PlagiarismIcon from "@mui/icons-material/Plagiarism";
 import { useState, useEffect } from "react";
+import SearchIcon from '@mui/icons-material/Search';
 import { Departments } from "@/utils/dummy-data";
 function PreviousYearPaper() {
   type paperType = {
@@ -64,17 +65,18 @@ function PreviousYearPaper() {
       </h2>
 
       <div className="flex  flex-col sm:flex-row gap-0 bg-black h-[600px] sm:h-[300px] ">
-        <div className="sm:w-1/2  flex flex-col pt-5 h-1/2 sm:h-full relative bg-[#D7F5DC]">
+        <div className="sm:w-1/2  flex flex-col pt-5 h-1/2 sm:h-full relative bg-[#D7F5DC] dark:bg-[#67CE67]">
           <div className="flex flex-col">
             <form>
               <div className="flex  flex-wrap gap-y-5 flex-col changeformtag">
           
                 <select
                   name="department"
+                  defaultValue="defaultselected"
                   onChange={(e) => setDepId(parseInt(e.target.value))}
                   className="w-2/3  p-3  border-[2px] border-black rounded-md  bg-[#D9D9D9] text-black"
                 >
-                  <option value="" disabled selected hidden>Branch</option>
+                  <option value="defaultselected" disabled  hidden>Branch</option>
                   {Departments.map((department) => (
                     <option value={department.id} key={department.id}>
                       {department.name}
@@ -84,10 +86,11 @@ function PreviousYearPaper() {
                
                 <select
                   name="semester"
+                  defaultValue="defaultselected"
                   className=" w-1/2 sm:w-1/3 p-3   border-black   border-[2px] rounded-md bg-[#D9D9D9] text-black"
                   onChange={(e) => setSem(parseInt(e.target.value))}
                 >
-                  <option value="" disabled selected hidden>Semester</option>
+                  <option value="defaultselected" disabled  hidden>Semester</option>
                   {Departments[depId - 1].sem.map((semester) => (
                     <option key={semester.id}>{semester.id}</option>
                   ))}
@@ -95,10 +98,11 @@ function PreviousYearPaper() {
               
                 <select
                   name="subject"
+                  defaultValue="defaultselected"
                   className=" w-1/3 sm:w-1/4 p-3   border-black   border-[2px] rounded-md  bg-[#D9D9D9] text-black"
                   onChange={(e) => setSub(e.target.value)}
                 >
-                  <option value="" disabled selected hidden>Subject</option>
+                  <option value="defaultselected" disabled  hidden>Subject</option>
                   {Departments[depId - 1].sem[sem - 1].sub.map((subjects) => (
                     <option
                       key={Departments[depId - 1].sem[sem - 1].sub.indexOf(
@@ -114,33 +118,34 @@ function PreviousYearPaper() {
           </div>
           <div className="mt-20">
             <button
-              className="w-fit p-1  bg-dgreen absolute right-5 bottom-5 border-2 rounded-md  border-black font-semibold text-black text-xl dark:text-[#D7F5DC] dark:bg-[#656565] "
+              className="w-fit p-1 font-bold  bg-dgreen absolute right-5 bottom-5 border-2 rounded-md hover:dark:bg-dgreen hover:drop-shadow-xl  
+               hover:shadow-black border-black dark:border-white fontugFi  text-black text-lg dark:text-[#D7F5DC] dark:bg-[#656565] "
               onClick={handleClick}
             >
-              Search
+              SEARCH <SearchIcon/>
             </button>
           </div>
         </div>
 
         <div className="sm:w-1/2 flex flex-col bg-white dark:bg-[#6D766D] h-1/2 sm:h-full ">
           <div className="pb-2.5 flex  flex-row justify-between h-[50px]">
-            <div className="bg-[#D8FBD8] w-1/3 text-center mt-2 text-black font-semibold ml-10 p-1.5   border-black border-2 rounded-lg">
+            <div className="bg-[#D8FBD8] dark:bg-[#67CE67] w-1/3 text-center mt-2 text-black font-semibold ml-10 p-1.5   border-black border-2 rounded-lg">
               Title
             </div>
-            <div className="bg-[#D8FBD8] w-1/3 text-center  mt-2 text-black font-semibold mr-10 p-1.5  border-black border-2 rounded-lg">
+            <div className="bg-[#D8FBD8] dark:bg-[#67CE67] w-1/3 text-center  mt-2 text-black font-semibold mr-10 p-1.5  border-black border-2 rounded-lg">
               Link
             </div>
           </div>
-          <div className="overflow-y-scroll h-full ">
+          <div className=" h-full overflow-y-auto scrollbar-hide ">
             {paper.map((exam) => (
               <div
                 key={exam.id}
                 className="flex flex-row justify-between px-10  "
               >
-                <div className="bg-[#D8FBD8] w-1/3 text-center my-1 text-sm text-black font-semibold p-1.5 border-black border-2 rounded-lg">
+                <div className="bg-[#D8FBD8] dark:bg-[#67CE67] w-1/3 text-center my-1 text-sm text-black font-semibold p-1.5 border-black border-2 rounded-lg">
                   {exam.subject}
                 </div>
-                <div className="bg-[#D8FBD8]  w-1/3 text-center my-1 text-sm  text-black font-semibold p-1.5 border-black border-2 rounded-lg">
+                <div className="bg-[#D8FBD8] dark:bg-[#67CE67]  w-1/3 text-center my-1 text-sm  text-black font-semibold p-1.5 border-black border-2 rounded-lg">
                   {exam.data}
                 </div>
               </div>
