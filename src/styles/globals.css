@@ -2,16 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
 .react-multi-carousel-item {
   /* padding: 40px 40px 40px 0; */
   padding: 20px;
   /* padding-bottom: 40px; */
   padding-top: 80px;
   width: 100%;
+}
 
+.padding-change {
+  padding-top: 20px;
 }
 
 .gd-carousel-wrapper {
@@ -23,6 +23,18 @@
 
   .react-multiple-carousel__arrow {
     position: absolute;
+  }
+
+  .react-multi-carousel-dot button {
+    margin-top: 2px;
+    margin-left: 5px;
+    border: 4px salmon;
+    height: 22px;
+    width: 22px;
+  }
+
+  .react-multi-carousel-dot--active button {
+    background: rgba(103, 206, 103, 1);
   }
 
   .react-multiple-carousel__arrow--left {
@@ -40,6 +52,10 @@
   }
 }
 
+.custom-dot-list-style button {
+  background: rgb(231, 85, 23);
+}
+
 @media screen and (max-width: 612px) {
   .one {
     text-align: center;
@@ -50,7 +66,5 @@
     top: 7px;
     border: 3px solid greenyellow;
     background-color: #20b15a;
+  }
 }
-
-}
-

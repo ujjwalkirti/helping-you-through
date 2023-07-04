@@ -357,4 +357,41 @@ const DepartmentName = [
     ],
   },
 ];
-export { developers, DepartmentName, TestimonialData, responsive };
+const reviews = [
+  {
+    id: "U21CS001",
+    admissionNo: "U21CS001",
+    name: "Aryan Sharma",
+    review:
+      "The student, Aryan Sharma (U21CS001), demonstrates exceptional problem-solving skills and consistently delivers high-quality code. They actively contribute to class discussions and help fellow classmates with complex concepts.",
+  },
+  {
+    id: "U21CS002",
+    admissionNo: "U21CS002",
+    name: "Riya Patel",
+    review:
+      "The student, Riya Patel (U21CS002), has shown great progress throughout the semester. They actively participate in group projects and demonstrate a good understanding of algorithms and data structures.",
+  },
+  {
+    id: "U21CS003",
+    admissionNo: "U21CS003",
+    name: "Kunal Singh",
+    review:
+      "The student, Kunal Singh (U21CS003), has a strong foundation in programming concepts but needs to work on improving their debugging skills. They should focus on optimizing code efficiency.",
+  },
+  {
+    id: "U21CS004",
+    admissionNo: "U21CS004",
+    name: "Ananya Verma",
+    review:
+      "The student, Ananya Verma (U21CS004), consistently meets deadlines and shows excellent attention to detail in their assignments. They actively seek feedback and apply it to improve their work.",
+  },
+  {
+    id: "U21CS005",
+    admissionNo: "U21CS005",
+    name: "Rahul Gupta",
+    review:
+      "The student, Rahul Gupta (U21CS005), has made significant progress in understanding software engineering principles. They actively engage in problem-solving activities and have good teamwork skills.",
+  },
+];
+export { developers, DepartmentName, TestimonialData, responsive, reviews };
