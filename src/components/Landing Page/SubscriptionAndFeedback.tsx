@@ -16,7 +16,7 @@ const SubscriptionAndFeedback = () => {
         <p className="text-xs text-[#8B8B8B] w-fit mx-auto px-2 ">Please drop your email below to get daily update about what we do</p>
         <div className="mt-10 w-fit mx-auto rounded-xl border border-black dark:border-white">
           <input className=" dark:bg-black border-none focus:outline-none pl-3 px-20" type="text" placeholder="Enter Your Email Adress" />
-          <Button variant="contained" color="warning" className="text-white bg-[#FF8345] mt-1 mx-1">Subscribe</Button>
+          <Button variant="contained" color="warning" className="text-white bg-[#FF8345] my-1 mx-1">Subscribe</Button>
         </div>
       </div>
     </div>;
