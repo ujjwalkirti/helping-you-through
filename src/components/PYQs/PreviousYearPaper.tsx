@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { poppins } from "@/utils/Fonts";
 import supabase from "@/utils/supaBase";
 import PlagiarismIcon from "@mui/icons-material/Plagiarism";
 import { useState, useEffect } from "react";
@@ -58,13 +59,13 @@ function PreviousYearPaper() {
   // }, []);
   return (
     <>
-      <h2 className="text-black text-3xl font-semibold  dark:text-white">
-        {" "}
+      <h2 className={"text-black text-3xl font-semibold  dark:text-white"}>
+        
         <PlagiarismIcon fontSize="inherit" className="text-black dark:text-white"/>
-        Find Previous Year Papers{" "}
+        Find Previous Year Papers
       </h2>
 
-      <div className="flex  flex-col sm:flex-row gap-0 bg-black h-[600px] sm:h-[300px] ">
+      <div className={"flex  flex-col sm:flex-row gap-0 bg-black h-[600px] sm:h-[300px] "+poppins.className}>
         <div className="sm:w-1/2  flex flex-col pt-5 h-1/2 sm:h-full relative bg-[#D7F5DC] dark:bg-[#67CE67]">
           <div className="flex flex-col">
             <form>
@@ -74,7 +75,7 @@ function PreviousYearPaper() {
                   name="department"
                   defaultValue="defaultselected"
                   onChange={(e) => setDepId(parseInt(e.target.value))}
-                  className="w-2/3  p-3  border-[2px] border-black rounded-md  bg-[#D9D9D9] text-black"
+                  className="w-2/3  p-3  border-[2px] border-black rounded-md  bg-[#D9D9D9] text-black cursor-pointer"
                 >
                   <option value="defaultselected" disabled  hidden>Branch</option>
                   {Departments.map((department) => (
@@ -87,7 +88,7 @@ function PreviousYearPaper() {
                 <select
                   name="semester"
                   defaultValue="defaultselected"
-                  className=" w-1/2 sm:w-1/3 p-3   border-black   border-[2px] rounded-md bg-[#D9D9D9] text-black"
+                  className=" w-1/2 sm:w-1/3 p-3   border-black   border-[2px] rounded-md bg-[#D9D9D9] text-black cursor-pointer"
                   onChange={(e) => setSem(parseInt(e.target.value))}
                 >
                   <option value="defaultselected" disabled  hidden>Semester</option>
@@ -99,7 +100,7 @@ function PreviousYearPaper() {
                 <select
                   name="subject"
                   defaultValue="defaultselected"
-                  className=" w-1/3 sm:w-1/4 p-3   border-black   border-[2px] rounded-md  bg-[#D9D9D9] text-black"
+                  className=" w-1/3 sm:w-1/4 p-3   border-black   border-[2px] rounded-md  bg-[#D9D9D9] text-black cursor-pointer"
                   onChange={(e) => setSub(e.target.value)}
                 >
                   <option value="defaultselected" disabled  hidden>Subject</option>
@@ -129,10 +130,10 @@ function PreviousYearPaper() {
 
         <div className="sm:w-1/2 flex flex-col bg-white dark:bg-[#6D766D] h-1/2 sm:h-full ">
           <div className="pb-2.5 flex  flex-row justify-between h-[50px]">
-            <div className="bg-[#D8FBD8] dark:bg-[#67CE67] w-1/3 text-center mt-2 text-black font-semibold ml-10 p-1.5   border-black border-2 rounded-lg">
+            <div className="bg-[#D8FBD8] dark:bg-[#67CE67] w-1/3 text-center mt-2 text-black font-semibold ml-10  text-lg border-black border-2 rounded-lg">
               Title
             </div>
-            <div className="bg-[#D8FBD8] dark:bg-[#67CE67] w-1/3 text-center  mt-2 text-black font-semibold mr-10 p-1.5  border-black border-2 rounded-lg">
+            <div className="bg-[#D8FBD8] dark:bg-[#67CE67] w-1/3 text-center  mt-2 text-black font-semibold mr-10 text-lg border-black border-2 rounded-lg">
               Link
             </div>
           </div>
