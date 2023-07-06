@@ -4,7 +4,7 @@ import { poppins } from "@/utils/Fonts";
 import supabase from "@/utils/supaBase";
 import PlagiarismIcon from "@mui/icons-material/Plagiarism";
 import { useState, useEffect } from "react";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 import { Departments } from "@/utils/dummy-data";
 function PreviousYearPaper() {
   type paperType = {
@@ -60,50 +60,62 @@ function PreviousYearPaper() {
   return (
     <>
       <h2 className={"text-black text-3xl font-semibold  dark:text-white"}>
-        
-        <PlagiarismIcon fontSize="inherit" className="text-black dark:text-white"/>
+        <PlagiarismIcon
+          fontSize="inherit"
+          className="text-black dark:text-white"
+        />
         Find Previous Year Papers
       </h2>
 
-      <div className={"flex  flex-col sm:flex-row gap-0 bg-black h-[600px] sm:h-[300px] "+poppins.className}>
+      <div
+        className={
+          "flex  flex-col sm:flex-row gap-0 bg-black h-[600px] sm:h-[300px] " +
+          poppins.className
+        }
+      >
         <div className="sm:w-1/2  flex flex-col pt-5 h-1/2 sm:h-full relative bg-[#D7F5DC] dark:bg-[#67CE67]">
           <div className="flex flex-col">
             <form>
               <div className="flex  flex-wrap gap-y-5 flex-col changeformtag">
-          
                 <select
                   name="department"
                   defaultValue="defaultselected"
                   onChange={(e) => setDepId(parseInt(e.target.value))}
                   className="w-2/3  p-3  border-[2px] border-black rounded-md  bg-[#D9D9D9] text-black cursor-pointer"
                 >
-                  <option value="defaultselected" disabled  hidden>Branch</option>
+                  <option value="defaultselected" disabled hidden>
+                    Branch
+                  </option>
                   {Departments.map((department) => (
                     <option value={department.id} key={department.id}>
                       {department.name}
                     </option>
                   ))}
                 </select>
-               
+
                 <select
                   name="semester"
                   defaultValue="defaultselected"
                   className=" w-1/2 sm:w-1/3 p-3   border-black   border-[2px] rounded-md bg-[#D9D9D9] text-black cursor-pointer"
                   onChange={(e) => setSem(parseInt(e.target.value))}
                 >
-                  <option value="defaultselected" disabled  hidden>Semester</option>
+                  <option value="defaultselected" disabled hidden>
+                    Semester
+                  </option>
                   {Departments[depId - 1].sem.map((semester) => (
                     <option key={semester.id}>{semester.id}</option>
                   ))}
                 </select>
-              
+
                 <select
                   name="subject"
                   defaultValue="defaultselected"
                   className=" w-1/3 sm:w-1/4 p-3   border-black   border-[2px] rounded-md  bg-[#D9D9D9] text-black cursor-pointer"
                   onChange={(e) => setSub(e.target.value)}
                 >
-                  <option value="defaultselected" disabled  hidden>Subject</option>
+                  <option value="defaultselected" disabled hidden>
+                    Subject
+                  </option>
                   {Departments[depId - 1].sem[sem - 1].sub.map((subjects) => (
                     <option
                       key={Departments[depId - 1].sem[sem - 1].sub.indexOf(
@@ -119,11 +131,11 @@ function PreviousYearPaper() {
           </div>
           <div className="mt-20">
             <button
-              className="w-fit p-1 font-bold  bg-dgreen absolute right-5 bottom-5 border-2 rounded-md hover:dark:bg-dgreen hover:drop-shadow-xl  
+              className="w-fit p-1 font-bold  bg-dgreen absolute right-5 bottom-5 border-2 rounded-md hover:dark:bg-dgreen hover:drop-shadow-xl
                hover:shadow-black border-black dark:border-white fontugFi  text-black text-lg dark:text-[#D7F5DC] dark:bg-[#656565] "
               onClick={handleClick}
             >
-              SEARCH <SearchIcon/>
+              SEARCH <SearchIcon />
             </button>
           </div>
         </div>
