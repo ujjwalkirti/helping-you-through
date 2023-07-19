@@ -1,15 +1,50 @@
 import ItemCard from "@/components/Marketplace/ItemCard";
+import Image from "next/image";
 import React from "react";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import PhoneIcon from "@mui/icons-material/Phone";
+import SendIcon from "@mui/icons-material/Send";
+import { products } from "@/utils/dummy-data";
 
 function MarketPlaceItemsBasedOnType() {
-  const items: any[] = [];
+  const items = products.map((item) => (
+    <div
+      key={item.id}
+      className="  bg-white rounded-md hover:scale-105 shadow-lg transition duration-100 ease-out hover:translate-x-4 hover:translate-y-4 ">
+      <Image
+        src={`/assests/vehicals/v${item.id}.jpg`}
+        alt=""
+        width={400}
+        height={150}
+        className=" rounded-bl-3xl rounded-br-3xl rounded-tl-md rounded-tr-md object-cover h-[250px]  "></Image>
+      <div className=" mt-4">
+        <p className="my-3 pl-5 text-black font-semibold inline-block">
+          {item.name}
+        </p>
+        <p className=" my-4 mr-5 px-3 text-black float-right bg-lgreen rounded-xl text-xs">
+          {item.negotiable ? "Fixed" : "Negotiable"}{" "}
+        </p>
+      </div>
+      <div className="relative ">
+        <span className="  bg-orange  p-2 font-medium text-md rounded-xl absolute left-[28px] bottom-[48px] text-white ">
+          ₹ {item.price}/-
+        </span>
+      </div>
+      <div className="flex p-2 px-5 justify-between">
+        <p className=" text-black font-semibold text-lg"> contacts :</p>
+        <WhatsAppIcon className=" text-dgreen hover:text-[#075e54]" />
+        <SendIcon className=" text-dgreen hover:text-[#075e54]" />
+        <PhoneIcon className=" text-dgreen hover:text-[#075e54]" />
+      </div>
+    </div>
+  ));
+
   return (
-    <div>
-      <p>Typeof Entity</p>
-      <div>
-        {items.map((item, index) => (
-          <ItemCard key={index} item={item} />
-        ))}
+    <div className="w-5/6 mx-auto ">
+      <p className="flex justify-center text-3xl font-extrabold my-5 "> Vehicals
+      </p>
+      <div className="flex flex-wrap my-5 justify-center basis-2  gap-7 ">
+        {items}
       </div>
     </div>
   );

@@ -484,4 +484,93 @@ const Departments=[
 
 ];
 
-export { developers,Departments, DepartmentName, TestimonialData, responsive, reviews };
+const products = [
+  {
+    id: 1,
+    name: "Product 1",
+    price: 10.99,
+    negotiable: false,
+    contact: {
+      whatsapp: "+1234567890",
+      email: "product1@example.com",
+      phone: "123-456-7890",
+    },
+    imageUrl: "https://example.com/product1.jpg",
+  },
+  {
+    id: 2,
+    name: "Product 2",
+    price: 24.99,
+    negotiable: true,
+    contact: {
+      whatsapp: "+9876543210",
+      email: "product2@example.com",
+      phone: "987-654-3210",
+    },
+    imageUrl: "https://example.com/product2.jpg",
+  },
+
+  {
+    id: 3,
+    name: "Product 3",
+    price: 15.49,
+    negotiable: true,
+    contact: {
+      whatsapp: "+5555555555",
+      email: "product3@example.com",
+      phone: "555-555-5555",
+    },
+    imageUrl: "https://example.com/product3.jpg",
+  },
+  {
+    id: 4,
+    name: "Product 4",
+    price: 415.49,
+    negotiable: true,
+    contact: {
+      whatsapp: "+5555555555",
+      email: "product3@example.com",
+      phone: "555-555-5555",
+    },
+    imageUrl: "https://example.com/product3.jpg",
+  },
+  {
+    id: 5,
+    name: "Product 5",
+    price: 15.49,
+    negotiable: true,
+    contact: {
+      whatsapp: "+5555555555",
+      email: "product3@example.com",
+      phone: "555-555-5555",
+    },
+    imageUrl: "https://example.com/product3.jpg",
+  },
+  {
+    id: 6,
+    name: "Product 6",
+    price: 15.49,
+    negotiable: true,
+    contact: {
+      whatsapp: "+5555555555",
+      email: "product3@example.com",
+      phone: "555-555-5555",
+    },
+    imageUrl: "https://example.com/product3.jpg",
+  },
+  {
+    id: 7,
+    name: "Product 7",
+    price: 15.49,
+    negotiable: true,
+    contact: {
+      whatsapp: "+5555555555",
+      email: "product3@example.com",
+      phone: "555-555-5555",
+    },
+    imageUrl: "https://example.com/product3.jpg",
+  },
+];
+
+
+export { developers,Departments, DepartmentName, TestimonialData, responsive, reviews,products };
