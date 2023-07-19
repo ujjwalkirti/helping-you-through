@@ -14,6 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [icon, setIcon] = useState(true);
@@ -29,6 +30,8 @@ const Navbar = () => {
 
   return (
     <>
+   
+
       <div className={"w-full hidden lg:block dark:bg-[#20B15A] dark:text-white  bg-[#d7f5dc] text-black" + poppins.className}>
         <div className="mx-auto flex justify-between items-center px-3 h-18 py-3">
           <div className="w-10 h-10 relative flex pl-3 items-center ">
@@ -128,6 +131,7 @@ const Navbar = () => {
           </div>
         )}
       </div>
+     
     </>
   );
 };

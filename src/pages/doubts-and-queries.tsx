@@ -5,7 +5,7 @@ function DoubtsAndQueries() {
   return (
     <section>
       <div>
-        <p>Queries and Doubts</p>
+        <p style={{"textAlign":"center" , "fontWeight":"bolder" , "fontSize":"30px" ,"color":"green"}}>Queries and Doubts</p>
       </div>
       <div>
         {/* Image */}

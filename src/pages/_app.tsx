@@ -8,6 +8,7 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
+
 export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -40,7 +41,8 @@ export default function App({ Component, pageProps }: AppProps) {
           montserrat.className
         }
       >
-        <Navbar />
+ <Navbar />
+       
         <Component {...pageProps} />
         <Footer />
       </div>
