@@ -1,12 +1,16 @@
 import AddProductForm from "@/components/Marketplace/AddProductForm";
 import StationaryItemsCarousel from "@/components/Marketplace/StationaryItemsCarousel";
 import VehicleItemsCarousel from "@/components/Marketplace/VehicleItemsCarousel";
+import Head from "next/head";
 import React from "react";
 
 const MarketPlace = () => {
   const [choice, setChoice] = React.useState("details");
   return (
     <div>
+      <Head>
+        <title>MarketPlace - Cost Effective solution for all your needs!</title>
+      </Head>
       <p>MarketPlace</p>
       <div>
         <p>Product</p>

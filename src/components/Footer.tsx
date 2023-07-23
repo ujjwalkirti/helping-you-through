@@ -6,6 +6,30 @@ import GoogleIcon from "@mui/icons-material/Google";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Image from "next/image";
 
+const options = [
+  { title: "Previous Year Questions", url: "/pyq" },
+  {
+    title: "Books And Stationaries",
+    url: "/marketplace",
+  },
+  {
+    title: "Academic Calender",
+    url: "/",
+  },
+  {
+    title: "Vehicle For Sale",
+    url: "/marketplace",
+  },
+  {
+    title: "Students Chapter and Hostel",
+    url: "/reviews",
+  },
+  {
+    title: "FAQ's",
+    url: "/doubts-and-queries",
+  },
+];
+
 const Footer = () => {
   return (
     <div className=" mx-auto bg-[#20B15A] pt-5">
@@ -34,32 +58,13 @@ const Footer = () => {
             Links
           </p>
           <div className="flex flex-row sm:flex-col w-full text-xs sm:text-lg divide-x divide-zinc-950 sm:divide-x-0">
-            <div className="flex flex-col ">
-              <Link href="" className="ml-1">
-                ☞ Previous Year Questions
-              </Link>
-              <Link href="" className="ml-1">
-                ☞ Books And Stationaries
-              </Link>
-            </div>
-            <div className="flex flex-col">
-              <Link href="">
-                <span className="px-1 inline-block">☞ Academic Calender</span>
-              </Link>
-              <Link href="">
-                <span className="px-1 inline-block">☞ Vehicle For Sale</span>
-              </Link>
-            </div>
-            <div className="flex flex-col ">
-              <Link href="">
-                <span className="px-1 inline-block">
-                  ☞ Students Chapter and Hostel
-                </span>
-              </Link>
-              <Link href="">
-                <span className="px-1 inline-block">☞ FAQ&apos; s</span>
-              </Link>
-            </div>
+            {options.map((option, index) => (
+              <div key={index} className="flex flex-col ">
+                <Link href={option.url} className="ml-1 hover:underline">
+                  ☞ {option.title}
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -89,12 +94,17 @@ const Footer = () => {
         </div>
       </div>
 
-      <h1 className="dark:text-white text-black text-center font-bold text-xl">
-        Developers and Designers
-      </h1>
-      <p className="text-[#484d4b] text-center text-xs font-semibold">
-        &copy;Copyright 2023. All RIghts Reserved
-      </p>
+      <div className="flex flex-col pb-4">
+        <Link
+          href="/developers"
+          className="dark:text-white text-black text-center font-bold text-xl hover:underline"
+        >
+          Developers and Designers
+        </Link>
+        <p className="text-[#484d4b] text-center text-xs font-semibold">
+          &copy;Copyright 2023. All RIghts Reserved
+        </p>
+      </div>
     </div>
   );
 };

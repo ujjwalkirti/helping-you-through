@@ -5,18 +5,21 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import PhoneIcon from "@mui/icons-material/Phone";
 import SendIcon from "@mui/icons-material/Send";
 import { products } from "@/utils/dummy-data";
+import Head from "next/head";
 
 function MarketPlaceItemsBasedOnType() {
   const items = products.map((item) => (
     <div
       key={item.id}
-      className="  bg-white rounded-md hover:scale-105 shadow-lg transition duration-100 ease-out hover:translate-x-4 hover:translate-y-4 ">
+      className="  bg-white rounded-md hover:scale-105 shadow-lg transition duration-100 ease-out hover:translate-x-4 hover:translate-y-4 "
+    >
       <Image
         src={`/assests/vehicals/v${item.id}.jpg`}
         alt=""
         width={400}
         height={150}
-        className=" rounded-bl-3xl rounded-br-3xl rounded-tl-md rounded-tr-md object-cover h-[250px]  "></Image>
+        className=" rounded-bl-3xl rounded-br-3xl rounded-tl-md rounded-tr-md object-cover h-[250px]  "
+      ></Image>
       <div className=" mt-4">
         <p className="my-3 pl-5 text-black font-semibold inline-block">
           {item.name}
@@ -41,7 +44,12 @@ function MarketPlaceItemsBasedOnType() {
 
   return (
     <div className="w-5/6 mx-auto ">
-      <p className="flex justify-center text-3xl font-extrabold my-5 "> Vehicals
+      <Head>
+        <title>View Items for Sale</title>
+      </Head>
+      <p className="flex justify-center text-3xl font-extrabold my-5 ">
+        {" "}
+        Vehicles
       </p>
       <div className="flex flex-wrap my-5 justify-center basis-2  gap-7 ">
         {items}

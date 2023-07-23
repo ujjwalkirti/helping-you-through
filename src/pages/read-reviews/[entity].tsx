@@ -1,4 +1,5 @@
 import ReviewCarousel from "@/components/Reviews/ReviewCarousel";
+import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 import Carousel from "react-multi-carousel";
@@ -27,6 +28,9 @@ function EntityReviews() {
 
   return (
     <section className="w-5/6 mx-auto pt-6">
+      <Head>
+        <title>Read Reviews</title>
+      </Head>
       <div className="flex flex-col justify-center items-center ">
         <p className=" font-extrabold text-3xl ">Bhabha Bhawan</p>
       </div>
