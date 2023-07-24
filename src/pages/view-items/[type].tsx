@@ -11,20 +11,20 @@ function MarketPlaceItemsBasedOnType() {
   const items = products.map((item) => (
     <div
       key={item.id}
-      className="  bg-white rounded-md hover:scale-105 shadow-lg transition duration-100 ease-out hover:translate-x-4 hover:translate-y-4 "
+      className=" bg-lgreen rounded-md hover:scale-105 shadow-lg transition duration-250 ease-out  dark:bg-[#efefef] "
     >
       <Image
         src={`/assests/vehicals/v${item.id}.jpg`}
         alt=""
         width={400}
         height={150}
-        className=" rounded-bl-3xl rounded-br-3xl rounded-tl-md rounded-tr-md object-cover h-[250px]  "
+        className=" rounded-bl-3xl rounded-br-3xl rounded-tl-md rounded-tr-md object-cover h-[250px] perspective-500	dark:shadow-inner  "
       ></Image>
       <div className=" mt-4">
         <p className="my-3 pl-5 text-black font-semibold inline-block">
           {item.name}
         </p>
-        <p className=" my-4 mr-5 px-3 text-black float-right bg-lgreen rounded-xl text-xs">
+        <p className=" my-4 mr-5 px-3 text-white float-right bg-dgreen rounded-xl text-xs">
           {item.negotiable ? "Fixed" : "Negotiable"}{" "}
         </p>
       </div>
