@@ -21,7 +21,6 @@ const Navbar = () => {
   const [checked, setChecked] = useState(true);
   const handleClickIcon = () => {
     setIcon(!icon);
-
   };
   const handleToggle = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -30,9 +29,12 @@ const Navbar = () => {
 
   return (
     <>
-   
-
-      <div className={"w-full hidden lg:block dark:bg-[#20B15A] dark:text-white  bg-[#d7f5dc] text-black" + poppins.className}>
+      <div
+        className={
+          "w-full hidden lg:block dark:bg-[#20B15A] dark:text-white  bg-[#d7f5dc] text-black " +
+          poppins.className
+        }
+      >
         <div className="mx-auto flex justify-between items-center px-3 h-18 py-3">
           <div className="w-10 h-10 relative flex pl-3 items-center ">
             <Image
@@ -52,11 +54,13 @@ const Navbar = () => {
           <div className=" w-5/12 flex  list-none justify-evenly items-center cursor-pointer">
             <li className="w-[33%]">
               <FormControl fullWidth>
-                <InputLabel><p className="dark:text-white text-black">Services</p></InputLabel>
+                <InputLabel>
+                  <p className="dark:text-white text-black">Services</p>
+                </InputLabel>
                 <Select>
-                  <MenuItem >One</MenuItem>
-                  <MenuItem >Two</MenuItem>
-                  <MenuItem >Three</MenuItem>
+                  <MenuItem>One</MenuItem>
+                  <MenuItem>Two</MenuItem>
+                  <MenuItem>Three</MenuItem>
                 </Select>
               </FormControl>
             </li>
@@ -76,7 +80,7 @@ const Navbar = () => {
       </div>
 
       {/* Responsiveness implementation */}
-      <div className={"w-full lg:hidden +" + poppins.className}>
+      <div className={"w-full lg:hidden " + poppins.className}>
         <div className="mx-auto flex justify-center items-center dark:bg-[#20B15A]  dark:text-white bg-[#d7f5dc] text-black">
           <div className="w-2/12 relative flex items-center mt-[5px] ">
             <Image
@@ -131,7 +135,6 @@ const Navbar = () => {
           </div>
         )}
       </div>
-     
     </>
   );
 };
