@@ -31,7 +31,7 @@ function DeveloperCard({
       <div className="group [prespective:1000px]">
         <div className="[transform-style:preserve-3d]  transition-all duration-1000  group-hover:[transform:rotateY(180deg)] [backface-visibility:hidden]">
           <div className={" bg-[inherit]  w-full" + poppins.className}>
-            <div className="relative shadow-md top-1 h-60 bg-[#d7f5dc] dark:bg-dgreen rounded z-10 ">
+            <div className="relative shadow-md top-1 h-60 bg-[white] dark:bg-black rounded-xl z-10 ">
               <div className="py-5">
                 <Image
                   className="rounded-full flex mx-auto "
@@ -44,12 +44,12 @@ function DeveloperCard({
               <p className="text-center mb-3 font-semibold ">{name}</p>
               <div className="list-none text-[#606161]">
                 <ul className="w-10/12 flex mx-auto my-2">
-                  <li className="bg-[#c7b3b9] rounded px-6">ROLE</li>
-                  <li className="mx-3">{position}</li>
+                  <li className="bg-lgreen rounded px-6">ROLE</li>
+                  <li className="mx-3 text-dark dark:text-white">{position}</li>
                 </ul>
                 <ul className="  w-10/12 flex mx-auto">
-                  <li className="bg-[#c7b3b9] rounded px-6">TEAM</li>
-                  <li className="mx-3">{year}</li>
+                  <li className="bg-lgreen rounded px-6">TEAM</li>
+                  <li className="mx-3 text-dark dark:text-white">{year}</li>
                 </ul>
               </div>
             </div>
@@ -59,7 +59,7 @@ function DeveloperCard({
               Contact {name}
             </p>
             <ul className=" list-none flex h-full  bottom-0 justify-evenly items-center mx-auto my-auto">
-              <GitHubIcon className="cursor-pointer" />
+              <GitHubIcon className="cursor-pointer text-black" />
               <TwitterIcon color="primary" className="cursor-pointer" />
               <InstagramIcon color="error" className="cursor-pointer" />
               <LinkedInIcon color="primary" className="cursor-pointer" />
