@@ -59,7 +59,7 @@ function PreviousYearPaper() {
   // }, []);
   return (
     <>
-      <h2 className={"text-black sm:text-3xl text-xl font-semibold  dark:text-white"}>
+      <h2 className={"text-black sm:text-3xl text-xl font-semibold  dark:text-white mb-5 w-5/6 mx-auto"}>
         <PlagiarismIcon
           fontSize="inherit"
           className="text-black dark:text-white"
@@ -69,11 +69,11 @@ function PreviousYearPaper() {
 
       <div
         className={
-          "flex  flex-col sm:flex-row gap-0 bg-black h-[600px] sm:h-[300px] w-5/6 mx-auto  " +
+          "flex  flex-col sm:flex-row gap-1 h-[600px] sm:h-[300px] w-5/6 mx-auto  " +
           poppins.className
         }
       >
-        <div className="sm:w-1/2  flex flex-col pt-5 h-1/2 sm:h-full relative bg-[#D7F5DC] dark:bg-[#67CE67]  border-2 pl-5 ">
+        <div className="sm:w-1/2  flex flex-col pt-5 h-1/2 sm:h-full relative rounded-lg bg-[#D7F5DC] dark:bg-[#67CE67]  border-2 pl-5 ">
           <div className="flex flex-col">
             <form>
               <div className="flex  flex-wrap gap-y-5 flex-col changeformtag">
@@ -81,7 +81,7 @@ function PreviousYearPaper() {
                   name="department"
                   defaultValue="defaultselected"
                   onChange={(e) => setDepId(parseInt(e.target.value))}
-                  className="w-4/5  p-3  border-[2px] border-black rounded-md  bg-[#D9D9D9] text-black cursor-pointer"
+                  className="w-4/5  p-3  border-[2px] border-black rounded-lg text-xs font-bold bg-[#D9D9D9] text-black cursor-pointer"
                 >
                   <option value="defaultselected" disabled hidden>
                     Branch
@@ -96,7 +96,7 @@ function PreviousYearPaper() {
                 <select
                   name="semester"
                   defaultValue="defaultselected"
-                  className=" w-1/2 sm:w-1/3 p-3   border-black   border-[2px] rounded-md bg-[#D9D9D9] text-black cursor-pointer"
+                  className=" w-1/2 sm:w-1/3 p-3   border-black text-xs font-bold  border-[2px] rounded-lg bg-[#D9D9D9] text-black cursor-pointer"
                   onChange={(e) => setSem(parseInt(e.target.value))}
                 >
                   <option value="defaultselected" disabled hidden>
@@ -110,7 +110,7 @@ function PreviousYearPaper() {
                 <select
                   name="subject"
                   defaultValue="defaultselected"
-                  className=" w-2/5 sm:w-1/3 p-3   border-black   border-[2px] rounded-md  bg-[#D9D9D9] text-black cursor-pointer"
+                  className=" w-2/5 sm:w-1/3 p-3   border-black  text-xs font-bold border-[2px] rounded-lg  bg-[#D9D9D9] text-black cursor-pointer"
                   onChange={(e) => setSub(e.target.value)}
                 >
                   <option value="defaultselected" disabled hidden>
@@ -140,7 +140,7 @@ function PreviousYearPaper() {
           </div>
         </div>
 
-        <div className="sm:w-1/2 flex flex-col bg-white dark:bg-[#6D766D] h-1/2 sm:h-full dark:border-2">
+        <div className="sm:w-1/2 flex flex-col bg-[#6D766D] h-1/2 sm:h-full border-2 rounded-lg">
           <div className="pb-2.5 flex  flex-row justify-between h-[50px]">
             <div className="bg-[#D8FBD8] dark:bg-[#67CE67] w-1/3 text-center mt-2 text-black font-semibold ml-10  text-lg border-black border-2 rounded-lg">
               Title

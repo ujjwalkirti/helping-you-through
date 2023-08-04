@@ -31,69 +31,71 @@ const Footer = () => {
       </div>
       <div className="w-5/6 flex flex-col sm:flex-row items-center justify-end py-5 mx-auto">
         <div className=" mx-auto flex flex-col">
-          <p className="text-center pb-3 font-bold text-lg text-black dark:text-white sm:dark:text-black">
+          <p className="text-center pb-3 font-bold text-lg text-black dark:text-white underline sm:dark:text-black">
             Links
           </p>
           <div className="flex flex-row sm:flex-col w-full text-xs sm:text-lg divide-x divide-zinc-950 sm:divide-x-0">
             <div className="flex flex-col ">
-              <Link href="" className="ml-1">
+              <Link href="/pyq" className="ml-1 hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">
                 ☞ Previous Year Questions
               </Link>
-              <Link href="" className="ml-1">
+              <Link href="/view-items/stationary" className="ml-1 hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">
                 ☞ Books And Stationaries
               </Link>
             </div>
             <div className="flex flex-col">
               <Link href="">
-                <span className="px-1 inline-block">☞ Academic Calender</span>
+                <span className="px-1 inline-block hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">☞ Academic Calender</span>
               </Link>
-              <Link href="">
-                <span className="px-1 inline-block">☞ Vehicle For Sale</span>
+              <Link href="/view-items/vehicles">
+                <span className="px-1 inline-block hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">☞ Vehicle For Sale</span>
               </Link>
             </div>
             <div className="flex flex-col ">
-              <Link href="">
-                <span className="px-1 inline-block">
+              <Link href="/reviews">
+                <span className="px-1 inline-block hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">
                   ☞ Students Chapter and Hostel
                 </span>
               </Link>
-              <Link href="">
-                <span className="px-1 inline-block">☞ FAQ&apos; s</span>
+              <Link href="/doubts-and-queries">
+                <span className="px-1 inline-block hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">☞ FAQ&apos; s</span>
               </Link>
             </div>
           </div>
         </div>
 
         <div className=" flex flex-col justify-around  mx-auto">
-          <p className="text-center py-3 font-bold text-lg  text-black dark:text-white sm:dark:text-black">
+          <p className="text-center py-3 font-bold text-lg  text-black dark:text-white underline sm:dark:text-black">
             Contact Us
           </p>
           <div className="flex flex-row sm:flex-col">
-            <Link href="" className="pt-1 text-lg items-center mx-1">
+            <Link href="" className="pt-1 text-lg items-center mx-1 ">
               <LinkedInIcon className="mr-1 text-white text-4xl" />
-              <span className="hidden sm:inline-block">LinkedIn</span>
+              <span className="hidden sm:inline-block hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">LinkedIn</span>
             </Link>
-            <Link href="" className="pt-1 text-lg items-center mx-1">
+            <Link href="" className="pt-1 text-lg items-center mx-1 ">
               <InstagramIcon className="text-white mr-1 text-4xl" />
-              <span className="hidden sm:inline-block">Instagram</span>
+              <span className="hidden sm:inline-block hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">Instagram</span>
             </Link>
-            <Link href="" className="pt-1 text-lg items-center mx-1">
+            <Link href="" className="pt-1 text-lg items-center mx-1 ">
               {" "}
               <GitHubIcon className="mr-2 text-4xl text-white" />
-              <span className="hidden sm:inline-block">Github</span>
+              <span className="hidden sm:inline-block hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">Github</span>
             </Link>
-            <Link href="" className="pt-1 text-lg items-center mx-1">
+            <Link href="" className="pt-1 text-lg items-center mx-1 ">
               <GoogleIcon className="mr-2 text-4xl text-white" />
-              <span className="hidden sm:inline-block">Gmail</span>
+              <span className="hidden sm:inline-block hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">Gmail</span>
             </Link>
           </div>
         </div>
       </div>
 
-      <h1 className="dark:text-white text-black text-center font-bold text-xl">
-        Developers and Designers
+      <h1 className="dark:text-white text-black text-center font-bold text-xl hover:underline hover:text-[#20B15A] hover:font-bold ">
+       <Link href="/developers" >
+       Developers and Designers
+       </Link> 
       </h1>
-      <p className="text-[#484d4b] text-center text-xs font-semibold">
+      <p className="text-[#484d4b] text-center text-xs font-semibold mt-2 ">
         &copy;Copyright 2023. All RIghts Reserved
       </p>
     </div>
