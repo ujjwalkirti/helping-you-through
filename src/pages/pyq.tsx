@@ -11,7 +11,6 @@ const PreviousYearQuestions = () => {
       </Head>
       <section className="">
         {/* heading */}
-        <p>Previous Year Paper</p>
         {/* Find Previous Year Paper */}
         <PreviousYearPaper />
         {/* Upload Previous year Paper */}
