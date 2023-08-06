@@ -2,7 +2,6 @@ import { bgcolor, display } from "@mui/system";
 // import "tailwindcss/tailwind.css";
 // import "./query.css"
 import React from "react";
-import { Form } from "react-router-dom";
 import Image from "next/image";
 import { Button, ButtonGroup } from "@mui/material";
 
@@ -46,7 +45,7 @@ const QueryForm = () => {
               E-mail
               {/* </label> */}
               <input
-                className="shadow appearance-none border border-red-500 border-[2px]  p-3 placeholder-dblack rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none  border-red-500 border-[2px]  p-3 placeholder-dblack rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                 id="email"
                 type="email"
                 placeholder="email"
@@ -95,8 +94,6 @@ const QueryForm = () => {
           </div> */}
     </>
   );
-    
-
 };
 
 export default QueryForm;
