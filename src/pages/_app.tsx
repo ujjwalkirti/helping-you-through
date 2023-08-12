@@ -7,8 +7,12 @@ import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { SessionProvider } from "next-auth/react";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -32,18 +36,20 @@ export default function App({ Component, pageProps }: AppProps) {
     };
   }, [router]);
   return (
-    <ThemeProvider defaultTheme="light" attribute="class">
-      {loading && <Loader />}
-      <div
-        className={
-          "text-black dark:text-white bg-white dark:bg-black  " +
-          montserrat.className
-        }
-      >
-        <Navbar />
-        <Component {...pageProps} />
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <SessionProvider session={session}>
+      <ThemeProvider defaultTheme="light" attribute="class">
+        {loading && <Loader />}
+        <div
+          className={
+            "text-black dark:text-white bg-white dark:bg-black  " +
+            montserrat.className
+          }
+        >
+          <Navbar />
+          <Component {...pageProps} />
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </SessionProvider>
   );
 }
