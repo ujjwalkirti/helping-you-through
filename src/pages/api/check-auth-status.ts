@@ -13,7 +13,6 @@ export default async function handler(
   try {
     const client = await clientPromise;
     const db = client.db("test-helping-you-through");
-    req.body;
     const user = await db
       .collection("auth-users")
       .find({ email: req.body.email })
@@ -30,6 +29,9 @@ export default async function handler(
   } catch (e) {
     return res
       .status(500)
-      .json({ message: "Sorry something went wrong, please try again." });
+      .json({
+        message: "Sorry something went wrong, please try again.",
+        error: e,
+      });
   }
 }

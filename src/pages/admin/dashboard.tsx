@@ -1,43 +1,52 @@
 import { CreateAccount } from "@/components/Admin/CreateAccount";
 import axios from "axios";
 import Head from "next/head";
-import React from "react";
+import { useEffect, useState } from "react";
 import { useSession, signOut } from "next-auth/react";
-import { Button } from "@/components/ui/button";
 
-async function AdminDashboard() {
+function AdminDashboard() {
+  const [isAllowed, setIsAllowed] = useState(false);
   const { data: session } = useSession();
 
-  if (session?.user) {
-    (await checkAuthStatus(session?.user.email || "")) === 200 ? (
-      <div>you are authorised to access this page</div>
-    ) : (
-      <div>
-        <p>You are not authorised to access this page</p>
-        <Button onClick={() => signOut()}>Sign out</Button>
-      </div>
-    );
-  } else {
-    return (
-      <div className="min-h-screen flex items-center justify-center px-2">
-        <Head>
-          <title>Admin Dashboard</title>
-        </Head>
-        <div className="w-full md:w-1/3 lg:w-1/4 mx-auto">
-          <CreateAccount />
-        </div>
-      </div>
-    );
-  }
-}
+  useEffect(() => {
+    if (session?.user) {
+      axios
+        .post("/api/get-auth-status", {
+          email: session?.user?.email,
+        })
+        .then((response) => {
+          if (response.status === 200) {
+            setIsAllowed(true);
+          }
+        })
+        .catch((err) => {});
+    }
+  }, [session]);
 
-async function checkAuthStatus(email: string): Promise<number> {
-  return axios
-    .post("/api/check-auth-status", {
-      email,
-    })
-    .then((res) => res.status)
-    .catch((err) => err.status);
+  return (
+    <div className="min-h-screen flex items-center justify-center px-2">
+      <Head>
+        <title>Admin Dashboard</title>
+      </Head>
+      {isAllowed ? (
+        <div className="">you are authorisssssed to access this page</div>
+      ) : (
+        <div className="w-full flex flex-col items-center gap-7">
+          {session ? (
+            <div>
+              You are not authorised to access this page, use some other
+              account!
+            </div>
+          ) : (
+            <div></div>
+          )}
+          <div className="w-full md:w-1/3 lg:w-1/4 mx-auto">
+            <CreateAccount />
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default AdminDashboard;
