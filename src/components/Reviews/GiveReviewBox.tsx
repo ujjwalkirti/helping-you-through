@@ -227,9 +227,7 @@ function GiveReviewBox() {
                       Student&apos;s chapter
                     </option>
                   </select>
-                  <select name="selected"
-                    onChange={handleChange}
-                    value={formData.selected}
+                  <select name="selected" value={formData.selected} onChange={handleChange}
                     className="border p-0.5 rounded-lg">
                     {display.map((item, index) => {
                       return (
