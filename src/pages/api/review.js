@@ -1,5 +1,5 @@
 // pages/api/review.ts
-import { Review } from "@/utils/Model"
+import { Review } from "@/utils/Models"
 const reviews = [];
 import clientPromise from "@/lib/mongodb";
 export default async function handler(req, res) {
