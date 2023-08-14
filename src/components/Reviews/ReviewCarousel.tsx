@@ -3,13 +3,16 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { responsive, reviews } from "@/utils/dummy-data";
 import Image from "next/image";
-
-function ReviewCarousel() {
-  const reviewers = reviews.map((el) => (
+import { ReviewDocument } from "@/utils/Models";
+interface ReviewCarouselProps {
+  data: ReviewDocument[];
+}
+function ReviewCarousel({ data }: ReviewCarouselProps) {
+  // console.log(data);
+  const reviewers = data.map((el, index) => (
     <div
-      key={el.id}
-      className=" min-w-5 bg-white p-6 rounded-lg dark:bg-dgreen shadow-grey dark:shadow-dgreen dark:shadow-md shadow-lg font-medium hover:bg-blend-hue"
-    >
+      key={index}
+      className=" min-w-5 bg-white p-6 rounded-lg dark:bg-dgreen shadow-grey dark:shadow-dgreen dark:shadow-md shadow-lg font-medium hover:bg-blend-hue">
       <div className="flex flex-col  justify-center items-center border-t-none border-b-dgreen dark:border-b-white border-b-2 p-2">
         <Image
           src="/assests/me.png"
@@ -20,10 +23,10 @@ function ReviewCarousel() {
         />
 
         <h2>{el.name}</h2>
-        <p className=" text-sm opacity-3 ">{el.admissionNo}</p>
+        <p className=" text-sm opacity-3 ">{el.email}</p>
         <hr />
       </div>
-      <div className="mt-4 font-light">{el.review}</div>
+      <div className="mt-4 font-light">{el.message}</div>
     </div>
   ));
 
@@ -37,8 +40,7 @@ function ReviewCarousel() {
         draggable={true}
         arrows={true}
         keyBoardControl={true}
-        className="gd-carousel text-black dark:text-white "
-      >
+        className="gd-carousel text-black dark:text-white ">
         {reviewers}
       </Carousel>
     </div>

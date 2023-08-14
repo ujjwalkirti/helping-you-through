@@ -5,17 +5,44 @@ import Image from "next/image";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import {useEffect ,useState } from "react"
+
 
 const Testimonials = () => {
   const { theme } = useTheme();
 
-  const testimonials = TestimonialData.map((el) => (
+  const [testimonialdata, setTestimonials] = useState([]);
+  const [updateUI,setupdateUI]= useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/testimonial'); // Replace with the actual endpoint
+        const data = await response.json();
+        console.log(data);
+        setTestimonials(data);
+      
+      } catch (error) {
+        console.error('Error fetching testimonials:', error);
+      }
+    };
+
+    fetchData();
+    setupdateUI(true);
+    
+  }, []);
+
+  useEffect(() => {
+    
+  },[updateUI]);
+
+  const testimonials = testimonialdata.map((el,index) => (
     <div
-      key={el.id}
+      key={el._id}
       className=" bg-white dark:bg-[#20B15A]  p-3 rounded-2xl shadow-md drop-shadow-lg  flex flex-col justify-between text-black dark:text-[white] "
     >
       <div>
-        <p className="px-7 text-sm font-medium">{el.review}</p>
+        <p className="px-7 text-sm font-medium">{el.suggestion}</p>
       </div>
       <div className="flex pl-7 mt-2 justify-start ">
         <Image
