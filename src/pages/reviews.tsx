@@ -1,15 +1,19 @@
 import GiveReviewBox from "@/components/Reviews/GiveReviewBox";
 import ReadReviewOptions from "@/components/Reviews/ReadReviewOptions";
-import React, { useState } from "react";
 import { Button, ButtonGroup } from "@mui/material";
 import { poppins } from "@/utils/Fonts";
 import Head from "next/head";
+import React, { useState } from 'react';
+import { data } from "autoprefixer";
 const Reviews = () => {
   const [choice, setChoice] = useState("read");
+
   const handleclick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const buttonId = (e.currentTarget as HTMLButtonElement).id;
     setChoice(buttonId === "1" ? "read" : "give");
   };
+
+  console.log(data);
   return (
     <section>
       <Head>
@@ -58,9 +62,8 @@ const Reviews = () => {
         >
           <Button
             id="1"
-            className={` rounded-md text-black dark:text-white ${
-              choice === "read" ? "bg-[#D7F5DC] dark:bg-[#67CE67]" : null
-            }`}
+            className={` rounded-md text-black dark:text-white ${choice === "read" ? "bg-[#D7F5DC] dark:bg-[#67CE67]" : null
+              }`}
             color="warning"
             onClick={handleclick}
           >
@@ -68,9 +71,8 @@ const Reviews = () => {
           </Button>
           <Button
             id="2"
-            className={` text-black dark:text-white ${
-              choice === "give" ? "bg-[#D7F5DC] dark:bg-[#67CE67]" : null
-            }`}
+            className={` text-black dark:text-white ${choice === "give" ? "bg-[#D7F5DC] dark:bg-[#67CE67]" : null
+              }`}
             color="warning"
             onClick={handleclick}
           >

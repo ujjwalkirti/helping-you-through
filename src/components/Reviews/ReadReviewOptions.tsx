@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { poppins } from "@/utils/Fonts";
-
+import axios from "axios";
 function ReadReviewOptions() {
+  const [data, setData] = useState<any[]>([]);
+  async function fetchData() {
+    try {
+      const response = await axios.get('api/review');
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      throw error;
+    }
+  }
+
+  useEffect(() => {
+    fetchData()
+      .then((result) => setData(result))
+      .catch((error) => console.error('Error:', error));
+  }, []);
+  console.log(data);
   return (
     <div>
       <div className=" w-10/12 md:w-full  m-auto mb-5 flex max-w-2xl max-h-96 bg-lgreen dark:bg-dgreen text-black dark:text-white rounded-xl shadow shadow-[#00000040] ">
