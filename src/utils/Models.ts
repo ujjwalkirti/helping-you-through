@@ -1,15 +1,14 @@
-
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 // Define the schema interface
 export interface IMarketPlace extends mongoose.Document {
   name: string;
   phoneNo: number;
   email: string;
-  product: 'Stationary' | 'Vehicle';
+  product: "Stationary" | "Vehicle";
   itemName: string;
   price: number;
-  negotiable: boolean;
+  negotiable: string;
   image: string;
 }
 export interface ReviewDocument extends mongoose.Document {
@@ -26,7 +25,7 @@ export interface PyqDocument extends mongoose.Document {
   semester: Number | string;
   emailId: string;
   admissionNo: string;
-  paperUrl:string;
+  paperUrl: string;
 }
 
 const reviewSchema = new mongoose.Schema<ReviewDocument>(
@@ -34,45 +33,52 @@ const reviewSchema = new mongoose.Schema<ReviewDocument>(
     name: { type: String, required: true },
     phoneno: { type: Number, required: true },
     email: { type: String, required: true },
-    category: { type: String, enum: ['hostel', 'student chapter'], required: true },
+    category: {
+      type: String,
+      enum: ["hostel", "student chapter"],
+      required: true,
+    },
     message: { type: String, required: true },
     about: { type: String, required: true },
   },
   { timestamps: true }
 );
 
-const Review =mongoose.models.Review || mongoose.model<ReviewDocument>('Review', reviewSchema);
+const Review =
+  mongoose.models.Review ||
+  mongoose.model<ReviewDocument>("Review", reviewSchema);
 // Define the schema
 const pyQSchema = new mongoose.Schema<PyqDocument>(
   {
     department: { type: String, required: true },
     subject: { type: String, required: true },
     emailId: { type: String, required: true },
-    semester:{ type: Number, required: true},
+    semester: { type: Number, required: true },
     admissionNo: { type: String, required: true },
     paperUrl: { type: String, required: true },
   },
   { timestamps: true }
 );
 
-const Papers=mongoose.models.Papers || mongoose.model<PyqDocument>('Papers',pyQSchema);
+const Papers =
+  mongoose.models.Papers || mongoose.model<PyqDocument>("Papers", pyQSchema);
 const marketPlaceSchema = new mongoose.Schema<IMarketPlace>({
   name: { type: String, required: true },
   phoneNo: { type: Number, required: true },
   email: { type: String, required: true },
-  product: { type: String, enum: ['Stationary', 'Vehicle'], required: true },
+  product: { type: String, enum: ["Stationary", "Vehicle"], required: true },
   itemName: { type: String, required: true },
   price: { type: Number, required: true },
-  negotiable: { type: Boolean, default: false },
+  negotiable: { type: String, default: "No" },
   image: { type: String, required: true },
 });
 
 // Create the model
-const MarketPlaceModel =mongoose.models.MarketPlaceModel || mongoose.model<IMarketPlace>('MarketPlaceModel', marketPlaceSchema);
+const ProductsModel =
+  mongoose.models.ProductsModel ||
+  mongoose.model<IMarketPlace>("ProductsModel", marketPlaceSchema);
 
-
-
-  export interface TestimonialData extends mongoose.Document{
+export interface TestimonialData extends mongoose.Document {
   name: string;
   AdmissionNo: string;
   Email: string;
@@ -91,9 +97,8 @@ const testimonialSchema = new mongoose.Schema<TestimonialData>(
   { timestamps: true }
 );
 
-const Testimonial= mongoose.models.Testimonial || mongoose.model<TestimonialData>('Testimonial', testimonialSchema);
+const Testimonial =
+  mongoose.models.Testimonial ||
+  mongoose.model<TestimonialData>("Testimonial", testimonialSchema);
 
-
-
-
-export {Review,MarketPlaceModel,Testimonial,Papers};
+export { Review, ProductsModel, Testimonial, Papers };
