@@ -1,13 +1,30 @@
 import ItemCard from "@/components/Marketplace/ItemCard";
 import Image from "next/image";
-import React from "react";
+import React , {useEffect,useState} from "react";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import PhoneIcon from "@mui/icons-material/Phone";
 import SendIcon from "@mui/icons-material/Send";
 import { products } from "@/utils/dummy-data";
 import Head from "next/head";
+import axios from "axios";
+import { Router } from "lucide-react";
+import { useRouter } from "next/router";
 
 function MarketPlaceItemsBasedOnType() {
+  const [VehicleDetails,setVehicleDetails] = useState([]);
+  const router = useRouter();
+  const { type } = router.query;
+  useEffect(()=>{
+    async function fetchData() {
+      const response = await axios.get(`/api/marketplace/?type=${type}`);
+      console.log("Response from server:", response.data);
+      setVehicleDetails(response.data);
+    }
+    if(type){
+      fetchData();
+    }
+   
+  },[type])
   const items = products.map((item) => (
     <div
       key={item.id}

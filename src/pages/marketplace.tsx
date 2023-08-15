@@ -1,11 +1,23 @@
 import AddProductForm from "@/components/Marketplace/AddProductForm";
 import StationaryItemsCarousel from "@/components/Marketplace/StationaryItemsCarousel";
 import VehicleItemsCarousel from "@/components/Marketplace/VehicleItemsCarousel";
+import axios from "axios";
 import Head from "next/head";
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 
 const MarketPlace = () => {
   const [choice, setChoice] = React.useState("details");
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(`/api/marketplace`);
+      console.log("Response from server:", response.data);
+      setItems(response.data);
+    }
+    fetchData();
+
+  }, [])
   return (
     <div>
       <Head>
