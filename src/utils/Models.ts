@@ -20,6 +20,14 @@ export interface ReviewDocument extends mongoose.Document {
   message: string;
   about: string;
 }
+export interface PyqDocument extends mongoose.Document {
+  department: string;
+  subject: string;
+  semester: Number | string;
+  emailId: string;
+  admissionNo: string;
+  paperUrl:string;
+}
 
 const reviewSchema = new mongoose.Schema<ReviewDocument>(
   {
@@ -35,6 +43,19 @@ const reviewSchema = new mongoose.Schema<ReviewDocument>(
 
 const Review =mongoose.models.Review || mongoose.model<ReviewDocument>('Review', reviewSchema);
 // Define the schema
+const pyQSchema = new mongoose.Schema<PyqDocument>(
+  {
+    department: { type: String, required: true },
+    subject: { type: String, required: true },
+    emailId: { type: String, required: true },
+    semester:{ type: Number, required: true},
+    admissionNo: { type: String, required: true },
+    paperUrl: { type: String, required: true },
+  },
+  { timestamps: true }
+);
+
+const Papers=mongoose.models.Papers || mongoose.model<PyqDocument>('Papers',pyQSchema);
 const marketPlaceSchema = new mongoose.Schema<IMarketPlace>({
   name: { type: String, required: true },
   phoneNo: { type: Number, required: true },
@@ -49,4 +70,4 @@ const marketPlaceSchema = new mongoose.Schema<IMarketPlace>({
 // Create the model
 const MarketPlaceModel =mongoose.models.MarketPlaceModel || mongoose.model<IMarketPlace>('MarketPlaceModel', marketPlaceSchema);
 
-export {Review,MarketPlaceModel};
+export {Review,MarketPlaceModel,Papers};

@@ -281,7 +281,8 @@ const DepartmentName = [
   {
     id: 1,
     name: "Civil Engineering",
-    branches: [
+    value:"CE",
+    subjects: [
       { id: 1, name: "Structural Engineering" },
       { id: 2, name: "Geotechnical Engineering" },
       { id: 3, name: "Transportation Engineering" },
@@ -293,7 +294,8 @@ const DepartmentName = [
   {
     id: 2,
     name: "Mechanical Engineering",
-    branches: [
+    value:"ME",
+    subjects: [
       { id: 1, name: "Thermal Engineering" },
       { id: 2, name: "Design Engineering" },
       { id: 3, name: "Production Engineering" },
@@ -304,7 +306,8 @@ const DepartmentName = [
   {
     id: 3,
     name: "Electrical Engineering",
-    branches: [
+    value:"EE",
+    subjects: [
       { id: 1, name: "Power Systems Engineering" },
       { id: 2, name: "Control Systems Engineering" },
       { id: 3, name: "Power Electronics & Drives" },
@@ -315,7 +318,8 @@ const DepartmentName = [
   {
     id: 4,
     name: "Electronics & Communication Engineering",
-    branches: [
+    value:"ECE",
+    subjects: [
       { id: 1, name: "Communication Systems" },
       { id: 2, name: "VLSI Design" },
       { id: 3, name: "Microelectronics & Embedded Systems" },
@@ -326,18 +330,20 @@ const DepartmentName = [
   {
     id: 5,
     name: "Computer Science & Engineering",
-    branches: [
-      { id: 1, name: "Artificial Intelligence" },
-      { id: 2, name: "Data Science" },
-      { id: 3, name: "Software Engineering" },
-      { id: 4, name: "Information Security" },
+    value:"CSE",
+    subjects: [
+      { id: 1, name: "FCP" },
+      { id: 2, name:  "Applied Chemistry" },
+      { id: 3, name: "MLFO" },
+      { id: 4, name: "Enginnering Mathematics-I" },
       { id: 5, name: "Computer Networks" },
     ],
   },
   {
     id: 6,
     name: "Chemical Engineering",
-    branches: [
+    value:"CHE",
+    subjects: [
       { id: 1, name: "Process Design & Development" },
       { id: 2, name: "Energy Systems" },
       { id: 3, name: "Chemical Process Modeling & Simulation" },
@@ -348,7 +354,44 @@ const DepartmentName = [
   {
     id: 7,
     name: "Metallurgical & Materials Engineering",
-    branches: [
+    value:"MME",
+    subjects: [
+      { id: 1, name: "Extractive Metallurgy" },
+      { id: 2, name: "Physical Metallurgy" },
+      { id: 3, name: "Materials Science" },
+      { id: 4, name: "Welding Technology" },
+      { id: 5, name: "Corrosion Science & Engineering" },
+    ],
+  },
+  {
+    id: 8,
+    name: "MSC chemistry",
+    value:"MSCCHE",
+    subjects: [
+      { id: 1, name: "Extractive Metallurgy" },
+      { id: 2, name: "Physical Metallurgy" },
+      { id: 3, name: "Materials Science" },
+      { id: 4, name: "Welding Technology" },
+      { id: 5, name: "Corrosion Science & Engineering" },
+    ],
+  },
+  {
+    id: 9,
+    name: "MSC MAth",
+    value:"MSCMATH",
+    subjects: [
+      { id: 1, name: "Extractive Metallurgy" },
+      { id: 2, name: "Physical Metallurgy" },
+      { id: 3, name: "Materials Science" },
+      { id: 4, name: "Welding Technology" },
+      { id: 5, name: "Corrosion Science & Engineering" },
+    ],
+  },
+  {
+    id: 10,
+    name: "MSC Physics",
+    value:"MSCPHY",
+    subjects: [
       { id: 1, name: "Extractive Metallurgy" },
       { id: 2, name: "Physical Metallurgy" },
       { id: 3, name: "Materials Science" },
@@ -403,7 +446,7 @@ const Departments=[
       {id:1,sub:["FCP", "Applied Chemistry", "MLFO", "Enginnering Mathematics-I"]},
       {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
       {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
-      {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD","InformationSecurity"]},
       {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
       {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
       {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
@@ -418,7 +461,11 @@ const Departments=[
     branch:"ME",
 
      sem:[
-      {id:1,sub:["FCP", "Applied Chemistry", "MLFO", "Enginnering Mathematics-I"]},
+      {id:1,sub:[ "Thermal Engineering",
+      "Design Engineering",
+      "Production Engineering",
+      "Industrial Engineering",
+      "Automobile Engineering"]},
       {id:2,sub:["Wokshop", "Mechanics","English Communication", "WebDev"]},
       {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
       {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
@@ -432,10 +479,15 @@ const Departments=[
   },
   {
     id:3,
-    name:"Computer Science And Engineering",
-    branch:"CSE",
+    name:"Civil Engineering",
+    branch:"CE",
      sem:[
-      {id:1,sub:["FCP", "Applied Chemistry", "MLFO", "Enginnering Mathematics-I"]},
+      {id:1,sub:["Structural Engineering",
+      "Geotechnical Engineering",
+      "Transportation Engineering",
+      "Water Resources Engineering",
+      "Environmental Engineering",
+      "Construction Technology & Management"]},
       {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
       {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
       {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
@@ -449,10 +501,57 @@ const Departments=[
   },
   {
     id:4,
-    name:"Computer Science And Engineering",
-    branch:"CSE",
+    name:"Electrical Engineering",
+    branch:"EE",
     sem:[
-      {id:1,sub:["FCP", "Applied Chemistry", "MLFO", "Enginnering Mathematics-I"]},
+      {id:1,sub:["Power Systems Engineering",
+      "Control Systems Engineering",
+      "Power Electronics & Drives",
+      "Renewable Energy Systems",
+      "Electrical Machines & Drives"]},
+      {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD", "InformationSecurity"]},
+      {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:8,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+    ],
+  type:["end", "mid"],
+  
+  },
+   {
+    id:5,
+    name:"Electronics and Communication Engineering",
+    branch:"ECE",
+     sem:[
+      {id:1,sub:[ "Communication Systems",
+      "VLSI Design",
+      "Microelectronics & Embedded Systems",
+      "Signal Processing",
+      "RF & Microwave Engineering"]},
+      {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:8,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+    ],
+  type:["end", "mid"],
+  
+  }
+  ,
+   {
+    id:6,
+    name:"Chemical Engineering",
+    branch:"CHE",
+     sem:[
+      {id:1,sub:[  "Process Design & Development",
+      "Energy Systems",
+      "Chemical Process Modeling & Simulation",
+      "Environmental Engineering & Management",
+      "Process Control & Instrumentation"]},
       {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
       {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
       {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
@@ -465,22 +564,89 @@ const Departments=[
   
   },
   {
-    id:5,
-    name:"Computer Science And Engineering",
-    branch:"CSE",
-     sem:[
-      {id:1,sub:["FCP", "Applied Chemistry", "MLFO", "Enginnering Mathematics-I"]},
-      {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
-      {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
-      {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
-      {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
-      {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
-      {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
-      {id:8,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
-    ],
-  type:["end", "mid"],
-  
-  }
+   id:7,
+   name:"Metallurgical and Materials Engineering",
+   branch:"MME",
+    sem:[
+     {id:1,sub:[ "Extractive Metallurgy",
+     "Physical Metallurgy",
+     "Materials Science",
+     "Welding Technology",
+     "Corrosion Science & Engineering"]},
+     {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+     {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+     {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+     {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+     {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+     {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+     {id:8,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+   ],
+ type:["end", "mid"],
+ 
+ },
+ {
+  id:8,
+  name:"MSC Physics",
+  branch:"MSCPHY",
+   sem:[
+    {id:1,sub:[ "Communication Systems",
+    "VLSI Design",
+    "Microelectronics & Embedded Systems",
+    "Signal Processing",
+    "RF & Microwave Engineering"]},
+    {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+    {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+    {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+    {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+    {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+    {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+    {id:8,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+  ],
+type:["end", "mid"],
+
+},
+{
+ id:9,
+ name:"MSC Chemistry",
+ branch:"MSCCHE",
+  sem:[
+   {id:1,sub:[ "Communication Systems",
+   "VLSI Design",
+   "Microelectronics & Embedded Systems",
+   "Signal Processing",
+   "RF & Microwave Engineering"]},
+   {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+   {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+   {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+   {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+   {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+   {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+   {id:8,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+ ],
+type:["end", "mid"],
+
+},
+{
+ id:10,
+ name:"MSC Maths",
+ branch:"MSCMATH",
+  sem:[
+   {id:1,sub:[ "Communication Systems",
+   "VLSI Design",
+   "Microelectronics & Embedded Systems",
+   "Signal Processing",
+   "RF & Microwave Engineering"]},
+   {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+   {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+   {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+   {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+   {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+   {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+   {id:8,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+ ],
+type:["end", "mid"],
+
+}
 
 ];
 

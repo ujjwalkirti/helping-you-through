@@ -6,20 +6,17 @@ import PlagiarismIcon from "@mui/icons-material/Plagiarism";
 import { useState, useEffect } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { Departments } from "@/utils/dummy-data";
+import axios from "axios";
+import Link from "next/link";
 function PreviousYearPaper() {
   type paperType = {
-    id: number;
-    sem: string;
-    branch: string;
-    data: string;
+    semester: Number;
+    department: string;
+    emailId: string;
     subject: string;
+    paperUrl: string;
+    admissionNo: string;
   };
-  // type formData={
-  //   department:string;
-  //   semester:string;
-  //   subject:string;
-  // }
-  // const [formData, setFormData]=useState<formData>({department:"", semester:"",subject:""});
   const [paper, setPaper] = useState<paperType[]>([]);
   const [depId, setDepId] = useState(1);
   const [sub, setSub] = useState<string>("");
@@ -27,39 +24,26 @@ function PreviousYearPaper() {
 
   const handleClick = async () => {
     const department = Departments[depId - 1].branch;
-    const { data, error } = await supabase
-      .from("pyqs")
-      .select()
-      .eq("branch", department)
-      .eq("sem", sem)
-      .eq("subject", sub);
-    if (data) {
-      setPaper(data);
-    }
-    // console.log(error);
-    if (error) {
-      console.log(error);
+    console.log("departmeneSelected: " + department);
+    try {
+      const url = `/api/pyq/?department=${department}&semester=${sem}&subject=${sub}`;
+      const response = await axios.get(url);
+      console.log("response: " + JSON.stringify(response.data));
+      if (response.data) {
+        setPaper(response.data);
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
-  // useEffect(() => {
-  //   const fetchPaper = async () => {
-  //     const { data, error } = await supabase.from("pyqs").select();
-  //     console.log(data);
-  //     if (data) {
-  //       setPaper(data);
-  //     }
-  //     // console.log(error);
-  //     if(error)
-  //     {
-  //       console.log(error);
-  //     }
-  //   };
 
-  //   fetchPaper();
-  // }, []);
   return (
     <>
-      <h2 className={"text-black sm:text-3xl text-xl font-semibold  dark:text-white mb-5 w-5/6 mx-auto"}>
+      <h2
+        className={
+          "text-black sm:text-3xl text-xl font-semibold  dark:text-white mb-5 w-5/6 mx-auto"
+        }
+      >
         <PlagiarismIcon
           fontSize="inherit"
           className="text-black dark:text-white"
@@ -150,16 +134,19 @@ function PreviousYearPaper() {
             </div>
           </div>
           <div className=" h-full overflow-y-auto scrollbar-hide ">
-            {paper.map((exam) => (
+            {paper.map((exam, index) => (
               <div
-                key={exam.id}
+                key={index}
                 className="flex flex-row justify-between px-10  "
               >
                 <div className="bg-[#D8FBD8] dark:bg-[#67CE67] w-2/5 h-8  overflow-hidden text-center my-1 text-sm text-black font-semibold p-1.5 border-black border-2 rounded-lg">
                   {exam.subject}
                 </div>
+
                 <div className="bg-[#D8FBD8] dark:bg-[#67CE67]  w-2/5 overflow-hidden text-center my-1 text-sm  text-black font-semibold p-1.5 border-black border-2 rounded-lg">
-                  {exam.data}
+                  <Link href={exam.paperUrl} target="_blank">
+                    Download
+                  </Link>
                 </div>
               </div>
             ))}
