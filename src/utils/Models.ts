@@ -46,7 +46,7 @@ const reviewSchema = new mongoose.Schema<ReviewDocument>(
 
 const Review =
   mongoose.models.Review ||
-  mongoose.model<ReviewDocument>("Review", reviewSchema);
+   mongoose.model<ReviewDocument>("Review", reviewSchema);
 // Define the schema
 const pyQSchema = new mongoose.Schema<PyqDocument>(
   {
@@ -96,9 +96,16 @@ const testimonialSchema = new mongoose.Schema<TestimonialData>(
   },
   { timestamps: true }
 );
+const querySchema=new mongoose.Schema<TestimonialData>( {
+    name: { type: String, required: true },
+    AdmissionNo: { type: String, required: true },
+    Email: { type: String, required: true },
+    suggestion: { type: String, required: true },
+  },
+  { timestamps: true }
+);
+const Query= mongoose.models.Query || mongoose.model<TestimonialData>('Query', querySchema);
+const Testimonial= mongoose.models.Testimonial || mongoose.model<TestimonialData>('Testimonial', testimonialSchema);
 
-const Testimonial =
-  mongoose.models.Testimonial ||
-  mongoose.model<TestimonialData>("Testimonial", testimonialSchema);
 
-export { Review, ProductsModel, Testimonial, Papers };
+export {Review,ProductsModel,Testimonial,Papers,Query};
