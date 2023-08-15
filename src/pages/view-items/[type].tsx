@@ -1,6 +1,6 @@
 import ItemCard from "@/components/Marketplace/ItemCard";
 import Image from "next/image";
-import React , {useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import PhoneIcon from "@mui/icons-material/Phone";
 import SendIcon from "@mui/icons-material/Send";
@@ -9,29 +9,32 @@ import Head from "next/head";
 import axios from "axios";
 import { Router } from "lucide-react";
 import { useRouter } from "next/router";
-
+import { IMarketPlace } from '@/utils/Models'
 function MarketPlaceItemsBasedOnType() {
-  const [VehicleDetails,setVehicleDetails] = useState([]);
+  const [VehicleDetails, setVehicleDetails] = useState<IMarketPlace[]>([]);
   const router = useRouter();
   const { type } = router.query;
-  useEffect(()=>{
+  const firstChar = type?.at(0)?.toUpperCase() ?? '';
+  const sliceString = type?.slice(1);
+
+  useEffect(() => {
     async function fetchData() {
       const response = await axios.get(`/api/marketplace/?type=${type}`);
       console.log("Response from server:", response.data);
       setVehicleDetails(response.data);
     }
-    if(type){
+    if (type) {
       fetchData();
     }
-   
-  },[type])
-  const items = products.map((item) => (
+
+  }, [type])
+  const items = VehicleDetails.map((item) => (
     <div
-      key={item.id}
+      key={item._id}
       className=" bg-lgreen rounded-md hover:scale-105 shadow-lg transition duration-250 ease-out  dark:bg-[#efefef] "
     >
       <Image
-        src={`/assests/vehicals/v${item.id}.jpg`}
+        src={item.image}
         alt=""
         width={400}
         height={150}
@@ -39,7 +42,7 @@ function MarketPlaceItemsBasedOnType() {
       ></Image>
       <div className=" mt-4">
         <p className="my-3 pl-5 text-black font-semibold inline-block">
-          {item.name}
+          {item.itemName}
         </p>
         <p className=" my-4 mr-5 px-3 text-white float-right bg-dgreen rounded-xl text-xs">
           {item.negotiable ? "Fixed" : "Negotiable"}{" "}
@@ -65,8 +68,7 @@ function MarketPlaceItemsBasedOnType() {
         <title>View Items for Sale</title>
       </Head>
       <p className="flex justify-center text-3xl font-extrabold my-5 ">
-        {" "}
-        Vehicles
+        {firstChar + sliceString}
       </p>
       <div className="flex flex-wrap my-5 justify-center basis-2  gap-7 ">
         {items}

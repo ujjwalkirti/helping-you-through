@@ -3,9 +3,9 @@ import React from "react";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import Image from "next/image";
 import { useState } from "react";
-import supabase from "@/utils/supaBase";
 import { poppins } from "@/utils/Fonts";
-
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { app, storage } from "@/lib/Firebase";
 function AddProductForm() {
   type formType = {
     name: string;
@@ -22,61 +22,58 @@ function AddProductForm() {
     name: "",
     phone: "",
     email: "",
-    product: "",
+    product: "Stationary",
     itemName: "",
     price: "",
-    isNegotiable: "",
+    isNegotiable: "No",
     image: null,
   });
-  // console.log(formData);
+ 
 
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     console.log(formData);
-    const filename=formData.image?.name;
-    const file=formData.image;
-    let imageLink;
-  if(filename)
-  {
-    const { data, error } = await supabase.storage
-    .from("MarketPlaceImages")
-    .upload(filename, file as File, {
-      cacheControl: "3600",
-      upsert: false,
-    });
-    if(data)
-    {
-      console.log(data);
-      const filepath = data.path;
-      console.log(filepath);
-        
-      const { data:imageUrl } = supabase
-  .storage
-  .from('MarketPlaceImages')
-  .getPublicUrl(`${filepath}`);
-  if(imageUrl)
-  {
-    imageLink=imageUrl.publicUrl;
-    console.log(imageUrl.publicUrl);
-  }
-    }
-    else{
-      console.log(error);
-    }
-  }
   
-    
+    if (!formData.image) {
+      console.log("No file selected for upload.");
+      return;
+    }
 
-    // const { error } = await supabase
-    //   .from("items")
-    //   .insert({
-    //     name: formData.name,
-    //     category: formData.product,
-    //     image: formData.image,
-    //     forsale: true,
-    //     price: formData.price,
-    //   });
-    // console.log(error);
+    try {
+      const storageRef = ref(storage, "maketplaceImages/" + formData.image.name);
+
+      // Upload the paper to Firebase Storage
+      await uploadBytes(storageRef, formData.image);
+
+      // Get the download URL of the uploaded paper
+      const downloadURL = await getDownloadURL(storageRef);
+      const response = await fetch("/api/marketplace", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ formData, downloadURL }),
+      });
+
+      if (response.ok) {
+        console.log("Data sent to the API successfully.");
+        setFormData({ name: "",
+        phone: "",
+        email: "",
+        product: "Stationary",
+        itemName: "",
+        price: "",
+        isNegotiable: "No",
+        image: null,});
+      } else {
+        console.error("Error sending data to the API.");
+      }
+    // console.log(response);
+      console.log("Product Image uploaded successfully. URL:", downloadURL);
+    } catch (error) {
+      console.error("Error uploading paper:", error);
+    }
+    
   };
 
   return (
@@ -133,7 +130,7 @@ function AddProductForm() {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="w-2/5 ml-5 text-sm h-7 font-bold pl-3 border-2 rounded-lg bg-[#D9D9D9] dark:bg-[#979798]"
+                  className=" w-3/5  ml-5 text-sm h-7 font-bold pl-3 border-2 rounded-lg bg-[#D9D9D9] dark:bg-[#979798]"
                 />
               </label>
 
@@ -141,14 +138,14 @@ function AddProductForm() {
                 Product:
                 <select
                   name="product"
-                  defaultValue="book"
+                  defaultValue="Stationary"
                   onChange={(e) =>
                     setFormData({ ...formData, product: e.target.value })
                   }
                   className="ml-5  border-2 rounded-lg text-sm cursor-pointer font-bold h-7 w-1/3 md:w-2/5 lg:w-1/5  bg-[#D9D9D9] dark:bg-[#979798]"
                 >
-                  <option value="book" className="cursor-pointer font-bold" >Stationery</option>
-                  <option value="vehicle" className="cursor-pointer font-bold" >Vehicle</option>
+                  <option value="Stationary" className="cursor-pointer font-bold" >Stationary</option>
+                  <option value="Vehicle" className="cursor-pointer font-bold" >Vehicle</option>
                 </select>
               </label>
 

@@ -59,7 +59,7 @@ const Footer = () => {
                   ☞ Academic Calender
                 </span>
               </Link>
-              <Link href="/view-items/vehicles">
+              <Link href="/view-items/vehicle">
                 <span className="px-1 inline-block hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">
                   ☞ Vehicle For Sale
                 </span>

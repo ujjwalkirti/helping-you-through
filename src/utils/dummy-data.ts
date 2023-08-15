@@ -447,7 +447,7 @@ const Departments=[
       {id:2,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
       {id:3,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
       {id:4,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD","InformationSecurity"]},
-      {id:5,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
+      {id:5,sub:["FCP","Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
       {id:6,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
       {id:7,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},
       {id:8,sub:["Enginnering Mathematics-II", "DSA", "DCOM", "DELD"]},

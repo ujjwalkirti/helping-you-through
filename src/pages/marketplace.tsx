@@ -4,11 +4,11 @@ import VehicleItemsCarousel from "@/components/Marketplace/VehicleItemsCarousel"
 import axios from "axios";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
-
+import {IMarketPlace} from '@/utils/Models'
 
 const MarketPlace = () => {
   const [choice, setChoice] = React.useState("details");
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<IMarketPlace[]>([]);
   useEffect(() => {
     async function fetchData() {
       const response = await axios.get(`/api/marketplace`);
@@ -34,8 +34,8 @@ const MarketPlace = () => {
       <div>
         {choice === "details" ? (
           <div>
-            <VehicleItemsCarousel />
-            <StationaryItemsCarousel />
+            <VehicleItemsCarousel data={items} />
+            <StationaryItemsCarousel data={items} />
           </div>
         ) : (
           <AddProductForm />

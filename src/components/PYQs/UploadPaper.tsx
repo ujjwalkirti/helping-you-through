@@ -63,6 +63,15 @@ function UploadPaper() {
       });
 
       if (response.ok) {
+        setFormData({
+          department: "",
+          subject: "",
+          semester: 1,
+          emailId: "",
+          admissionNo: "",
+          paper: null,
+          paperUrl: "",
+        })
         console.log("Data sent to the API successfully.");
       } else {
         console.error("Error sending data to the API.");

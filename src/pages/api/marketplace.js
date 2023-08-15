@@ -1,39 +1,49 @@
-import { Review } from "@/utils/Models"
-const reviews = [];
+import { ProductsModel } from "@/utils/Models";
 import clientPromise from "@/lib/mongodb";
+function capitalize(input) {
+    if(!input.length) return input;
+    return input.charAt(0).toUpperCase() + input.slice(1);
+  }
+  
 export default async function handler(req, res) {
     try {
+       
         const client = await clientPromise
         const db = client.db("test-helping-you-through")
         const collection = db.collection("Products")
         if (req.method === 'GET') {
-            const { type } = req.query;
-            if (type === 'vehicles') {
-                // const reviewsData= await collection.find(query).toArray()
-                return res.status(200).json({ message: "Recieved a get request for Vehicle" });
-            } else if (type === 'stationary') {
-                // Handle the regular GET request
-                return res.status(200).json({ message: 'Received a  GET request stationary' });
+            // let { type } = req.query ? req.query : {type:""};
+            let type=req.query.hasOwnProperty('type')?req.query.type:"blank";
+            type=capitalize(type);
+            if (type === 'Vehicle') {
+                const vehiclesData= await collection.find({product:type}).toArray()
+                return res.status(200).json(vehiclesData);
+            } else if (type === 'Stationary') {
+                const stationaryData= await collection.find({product:type}).toArray()
+                return res.status(200).json(stationaryData);
             }
             else {
-                
-                return res.status(200).json({ message: 'Received a regular GET request' })
+                const data=await collection.find({}).toArray()
+                return res.status(200).json(data)
             }
         } else if (req.method === 'POST') {
             try {
-                const newReview = new Review({
-                    name: req.body.name,
-                    phoneno: req.body.phone,
-                    email: req.body.email,
-                    category: req.body.reviewAbout,
-                    about: req.body.selected,
-                    message: req.body.message
+                const newProduct = new ProductsModel({
+                    name: req.body.formData.name,
+                    phoneNo: req.body.formData.phone,
+                    email: req.body.formData.email,
+                    product: req.body.formData.product,
+                    itemName: req.body.formData.itemName,
+                    price: req.body.formData.price,
+                    negotiable: req.body.formData.isNegotiable,
+                    image: req.body.downloadURL,
                 });
-                console.log(newReview)
-                const response = await collection.insertOne(newReview);
-                return res.status(201).json(response);
+                const response = await collection.insertOne(newProduct);
+                // console.log(req.body);
+                // console.log("response"+response);
+                return res.status(201).json("success", "ok", response);
             } catch (error) {
-                console.log(error.message);
+                //   console.log(error.message);
                 return res.status(500).json(error);
             }
 
