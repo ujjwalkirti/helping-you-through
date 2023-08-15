@@ -19,11 +19,11 @@ function PreviousYearPaper() {
   };
   const [paper, setPaper] = useState<paperType[]>([]);
   const [depId, setDepId] = useState(1);
-  const [sub, setSub] = useState<string>("");
+  const [sub, setSub] = useState<string>("defaultselected");
   const [sem, setSem] = useState(1);
 
   const handleClick = async () => {
-    const department = Departments[depId - 1].branch;
+    let department = Departments[depId - 1].branch;
     console.log("departmeneSelected: " + department);
     try {
       const url = `/api/pyq/?department=${department}&semester=${sem}&subject=${sub}`;
@@ -31,6 +31,8 @@ function PreviousYearPaper() {
       console.log("response: " + JSON.stringify(response.data));
       if (response.data) {
         setPaper(response.data);
+        setSub("defaultselected");
+        setSem(1);
       }
     } catch (err) {
       console.log(err);
@@ -67,7 +69,7 @@ function PreviousYearPaper() {
                   onChange={(e) => setDepId(parseInt(e.target.value))}
                   className="w-4/5  p-3  border-[2px] border-black rounded-lg text-xs font-bold bg-[#D9D9D9] text-black cursor-pointer"
                 >
-                  <option value="defaultselected" disabled hidden>
+                  <option value="defaultselected" disabled>
                     Branch
                   </option>
                   {Departments.map((department) => (
@@ -79,11 +81,11 @@ function PreviousYearPaper() {
 
                 <select
                   name="semester"
-                  defaultValue="defaultselected"
+                  defaultValue="def"
                   className=" w-1/2 sm:w-1/3 p-3   border-black text-xs font-bold  border-[2px] rounded-lg bg-[#D9D9D9] text-black cursor-pointer"
                   onChange={(e) => setSem(parseInt(e.target.value))}
                 >
-                  <option value="defaultselected" disabled hidden>
+                  <option value="def" disabled hidden>
                     Semester
                   </option>
                   {Departments[depId - 1].sem.map((semester) => (
@@ -94,14 +96,16 @@ function PreviousYearPaper() {
                 <select
                   name="subject"
                   defaultValue="defaultselected"
+                  value={sub}
                   className=" w-2/5 sm:w-1/3 p-3   border-black  text-xs font-bold border-[2px] rounded-lg  bg-[#D9D9D9] text-black cursor-pointer"
                   onChange={(e) => setSub(e.target.value)}
                 >
-                  <option value="defaultselected" disabled hidden>
+                  <option value="defaultselected" disabled>
                     Subject
                   </option>
                   {Departments[depId - 1].sem[sem - 1].sub.map((subjects) => (
                     <option
+                      value={subjects}
                       key={Departments[depId - 1].sem[sem - 1].sub.indexOf(
                         subjects
                       )}
