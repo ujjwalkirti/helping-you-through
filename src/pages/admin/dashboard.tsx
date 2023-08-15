@@ -11,7 +11,7 @@ function AdminDashboard() {
   useEffect(() => {
     if (session?.user) {
       axios
-        .post("/api/get-auth-status", {
+        .post("/api/check-auth-status", {
           email: session?.user?.email,
         })
         .then((response) => {
