@@ -106,19 +106,6 @@ const querySchema=new mongoose.Schema<TestimonialData>( {
   },
   { timestamps: true }
 );
-
-// const replySchema=new mongoose.Schema<TestimonialData>( {
-//     replyMessege: { type: String, required: true },
-//     reply: { type: String, required: true },
-    
-//   },
-//   { timestamps: true }
-// );
-const Query= mongoose.models.Query || mongoose.model<TestimonialData>('Query', querySchema);
-const Testimonial= mongoose.models.Testimonial || mongoose.model<TestimonialData>('Testimonial', testimonialSchema);
-// const Reply= mongoose.models.reply || mongoose.model<TestimonialData>('Reply', replySchema);
-
-
 interface ReplyDocument extends Document {
   reply: string;
   // You can add more fields if needed
@@ -131,6 +118,17 @@ const replySchema = new mongoose.Schema<ReplyDocument>({
   },
 });
 const Reply= mongoose.models.Reply || mongoose.model<ReplyDocument>('Reply', replySchema);
+// const replySchema=new mongoose.Schema<TestimonialData>( {
+//     replyMessege: { type: String, required: true },
+//     reply: { type: String, required: true },
+    
+//   },
+//   { timestamps: true }
+// );
+const Query= mongoose.models.Query || mongoose.model<TestimonialData>('Query', querySchema);
+const Testimonial= mongoose.models.Testimonial || mongoose.model<TestimonialData>('Testimonial', testimonialSchema);
+
+
 
 // export default mongoose.model<ReplyDocument>("Reply", replySchema);
 

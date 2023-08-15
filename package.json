@@ -18,8 +18,6 @@
     "@mui/material": "^5.14.3",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
-    "@supabase/supabase-js": "^2.26.0",
-    "@types/mongoose": "^5.11.97",
     "@types/next": "^9.0.0",
     "@types/node": "18.15.13",
     "@types/react": "18.0.38",

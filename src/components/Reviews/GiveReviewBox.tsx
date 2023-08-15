@@ -9,7 +9,7 @@ function GiveReviewBox() {
 
   const hostelNames = [
     "Tagore Bhavan",
-    "Bhahbha Bhavan",
+    "Bhabha Bhavan",
     "Swami Bhavan",
     "Gajjar Bhavan",
   ];

@@ -12,14 +12,19 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Button } from "@mui/material";
 import Link from "next/link";
-function VehicleItemsCarousel() {
-  const items = products.map((item) => (
+import {IMarketPlace} from '@/utils/Models'
+interface marketPlaceProps {
+  data: IMarketPlace[];
+}
+function VehicleItemsCarousel({data}:marketPlaceProps) {
+  const vehicleData=data.filter((val)=>(val.product=='Vehicle'))
+  const items = vehicleData.map((item) => (
     <div
       key={item.id}
       className=" bg-lgreen   w-[250px] rounded-md hover:scale-105 shadow-lg transition duration-250 ease-out  dark:bg-[#efefef] "
     >
       <Image
-        src={`/assests/vehicals/v${item.id}.jpg`}
+        src={item.image}
         alt=""
         width={400}
         height={150}
@@ -27,10 +32,10 @@ function VehicleItemsCarousel() {
       ></Image>
       <div className=" mt-4">
         <p className="my-3 pl-5 text-black font-semibold inline-block">
-          {item.name}
+          {item.itemName}
         </p>
         <p className=" my-4 mr-5 px-3 text-white float-right bg-dgreen rounded-xl text-xs">
-          {item.negotiable ? "Fixed" : "Negotiable"}{" "}
+          {item.negotiable ? "Fixed" : "Negotiable"}
         </p>
       </div>
       <div className="relative ">
