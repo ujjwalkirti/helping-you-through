@@ -72,7 +72,19 @@ const testimonialSchema = new mongoose.Schema<TestimonialData>(
 
 const Testimonial= mongoose.models.Testimonial || mongoose.model<TestimonialData>('Testimonial', testimonialSchema);
 
+const querySchema = new mongoose.Schema<TestimonialData>(
+  {
+    name: { type: String, required: true },
+    AdmissionNo: { type: String, required: true },
+    Email: { type: String, required: true },
+    suggestion: { type: String, required: true },
+  },
+  { timestamps: true }
+);
+
+const Query= mongoose.models.Query || mongoose.model<TestimonialData>('Query', querySchema);
 
 
 
-export {Review,MarketPlaceModel,Testimonial};
+
+export {Review,MarketPlaceModel,Testimonial,Query};

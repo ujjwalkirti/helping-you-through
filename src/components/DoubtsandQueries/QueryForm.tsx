@@ -1,99 +1,215 @@
-import { bgcolor, display } from "@mui/system";
-// import "tailwindcss/tailwind.css";
-// import "./query.css"
-import React from "react";
+import { poppins } from "@/utils/Fonts";
+import { Button } from "@mui/material";
+import axios from "axios";
 import Image from "next/image";
-import { Button, ButtonGroup } from "@mui/material";
+import React, { useState, ChangeEvent, useEffect } from "react";
+import Quer from "@/components/DoubtsandQueries/Quer"
+interface FeedbackFormData {
+  name: string;
+  AdmissionNo: string;
+  suggestion: string;
+  Email: string;
+}
 
-const QueryForm = () => {
+const SubscriptionAndFeedback = () => {
+  const [feedbackForm, setFeedbackForm] = useState<FeedbackFormData>({
+    name: "",
+    AdmissionNo: "",
+    suggestion: "",
+    Email: "",
+  });
+
+  const handleFormChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    setFeedbackForm((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      axios.post(`/api/query`, feedbackForm).then((res) => {
+        console.log(res);
+        setFeedbackForm({
+          name: "",
+          AdmissionNo: "",
+          Email: "",
+          suggestion: "",
+        });
+      });
+    } catch (err) {
+      console.log("Error in axios", err);
+    }
+
+    console.log(feedbackForm);
+  };
+
   return (
     <>
-      <div
-        className=" dark:bg-[#070707] dark:text-white  bg-[#d7f5dc] text-black"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          // border: "1px solid green",
-        }}
-      >
-        <Image
-          className=" sm:block object-cover hidden rounded mr-3"
-          width={400}
-          height={400}
-          src="/assests/group.png"
-          alt="team pic"
-        />
-        {/* <iframe src="https://giphy.com/embed/Ibf0oGMt6qqAqfbw2a" width="480" height="480" frameBorder="0" className="giphy-embed" allowFullScreen></iframe> */}
-        <div className="w-full dark:bg-[#272626] dark:text-white m-8 bg-[#f7f8f7] text-black max-w-xs ">
-          <form className=" my-8 shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
-            <div className="mb-4" style={{ fontWeight: "bold" }}>
-              {/* <label className="block text-gray-700 text-sm font-bold mb-2" for="username"> */}
-              Name
-              {/* </label> */}
-              <input
-                className=" border-[2px]  p-3 placeholder-dblack"
-                placeholder="Admission No"
-                type="text"
+      <div className="hidden md:block bg-green-100">
+        {/* subscribe section */};{/* feedback */}
+        {/* <p className="text-[#20B15A] text-center pb-16">FEEDBACK</p> */}
+        <div
+          className={
+            "w-full text-[#044A42] dark:bg-black dark:text-[#20B15A] " +
+            poppins.className
+          }
+        >
+          <div className="w-10/12 mx-auto flex ">
+            <div className="w-6/12 flex-col">
+              <Image
+                // className=" sm:block object-cover hidden rounded mr-3"
+                width={800}
+                height={800}
+                src="/assests/group.png"
+                alt="feed.pic"
               />
+              <div className=" flex w-fit mx-auto px-3 text-center mt-4 font ">
+                <p className=" leading-[1.5] text-xl">
+                  If you have any query <br /> ask here
+                </p>
+              </div>
             </div>
-            <div
-              className="mb-3 dark:bg-[#272626] dark:text-white  bg-[#fafafa] text-black"
-              style={{ fontWeight: "bold" }}
-            >
-              {/* <label className="block text-gray-700 text-sm font-bold mb-2" for="password"> */}
-              E-mail
-              {/* </label> */}
-              <input
-                className="shadow appearance-none  border-red-500 border-[2px]  p-3 placeholder-dblack rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="email"
-                type="email"
-                placeholder="email"
-              />
+
+            <div className="w-6/12 list-none items-center pb-5">
+              <div className="w-8/12 flex-col float-right">
+                <form onSubmit={handleSubmit}>
+                  <li className="py-2">
+                    <p>Name</p>
+                    <input
+                      name="name"
+                      className="w-full p-1 h-8 border"
+                      type="text"
+                      placeholder="Enter Name"
+                      value={feedbackForm.name}
+                      onChange={handleFormChange}
+                    />
+                  </li>
+                  <li className="py-2">
+                    <p>Admission No</p>
+                    <input
+                      name="AdmissionNo"
+                      className="w-full p-1  h-8 border"
+                      type="text"
+                      placeholder="Enter Admission No"
+                      value={feedbackForm.AdmissionNo}
+                      onChange={handleFormChange}
+                    />
+                  </li>
+                  <li className="py-2">
+                    <p>Email </p>
+                    <input
+                      name="Email"
+                      className="w-full p-1 h-8 border"
+                      type="text"
+                      placeholder="Enter Email"
+                      value={feedbackForm.Email}
+                      onChange={handleFormChange}
+                    />
+                  </li>
+                  <li className="py-2">
+                    <p>Query </p>
+                    <textarea
+                      name="suggestion"
+                      rows={5}
+                      className="w-full p-1  border"
+                      placeholder="Please  provide Suggestion"
+                      value={feedbackForm.suggestion}
+                      onChange={handleFormChange}
+                    />
+                  </li>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="warning"
+                    className="text-white bg-[#FF8345] mt-10 mx-1"
+                  >
+                    Send Message
+                  </Button>
+                </form>
+              </div>
             </div>
-            <div
-              className="mb-8 dark:bg-[#272626] dark:text-white  bg-[#fbfdfc] text-black "
-              style={{ fontWeight: "bold" }}
-            >
-              {/* <label className="block text-gray-700 text-sm font-bold mb-2" for="password"> */}
-              Write Here
-              {/* </label> */}
-              <textarea
-                style={{ borderRadius: "5px", border: "2px solid black" }}
-                id="w3review"
-                name="w3review"
-                rows={4}
-                cols={25}
-                placeholder="....."
-              ></textarea>
-            </div>
-            <div className="flex items-center justify-between">
-              <Button
-                id="2"
-                className={` text-black dark:text-white  bg-[#1fe45a]`}
-                style={{ background: "orange" }}
-              >
-                Submit
-              </Button>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
-      {/* <div className={"w-full lg:hidden"}>
-        <div className="mx-auto flex justify-center items-center dark:bg-[#20B15A]  dark:text-white bg-[#d7f5dc] text-black">
-          <div className="w-2/12 relative flex items-center mt-[5px] ">
-            <Image
-              className=" object-cover rounded-full"
-              width={30}
-              height={30}
-              src="/logo.jpg"
-              alt="Website's logo"
-            />
+<Quer/>
+      {/* "responsive Implemnation" */}
+      <div className="md:hidden">
+        <p className="text-[#20B15A] text-center my-8">FEEDBACK</p>
+        <div
+          className={
+            " w-full flex justify-center items-center text-[#044A42] dark:bg-black dark:text-[#20B15A] " +
+            poppins.className
+          }
+        >
+          <div className="flex-col justify-center">
+            <div className="">
+              <Image
+                width={300}
+                height={300}
+                src="/assests/feedback.png"
+                alt="feed.pic"
+              />
+            </div>
+            <div className="list-none flex-col text-center justify-center mt-2 pb-5">
+              <li className="py-2">
+                <p>Name</p>
+                <input
+                  className="w-full p-1 h-8 border rounded-xl mt-2 "
+                  type="text"
+                  placeholder="Enter Name"
+                  value={feedbackForm.name}
+                  onChange={handleFormChange}
+                />
+              </li>
+              <li className="py-2">
+                <p>Admission No</p>
+                <input
+                  className="w-full p-1  h-8 border rounded-xl mt-2 "
+                  type="text"
+                  placeholder="Enter Admission No"
+                  value={feedbackForm.AdmissionNo}
+                  onChange={handleFormChange}
+                />
+              </li>
+              <li className="py-2">
+                <p>Email </p>
+                <input
+                  className="w-full p-1 h-8 border rounded-xl mt-2 "
+                  type="text"
+                  placeholder="Enter Email"
+                  value={feedbackForm.Email}
+                  onChange={handleFormChange}
+                />
+              </li>
+              <li className="py-2">
+                <p>Query </p>
+                <textarea
+                  rows={5}
+                  className="w-full p-1  border rounded-xl mt-2 "
+                  placeholder="Please  provide Suggestion"
+                  value={feedbackForm.suggestion}
+                  onChange={handleFormChange}
+                />
+              </li>
+            </div>
+            <Button
+              variant="contained"
+              color="warning"
+              className="text-white bg-[#FF8345] mt-5 mx-0.5"
+              // onSubmit={handleSubmit}
+            >
+              Send Message
+            </Button>
           </div>
-          </div>
-          </div> */}
+        </div>
+      </div>
     </>
   );
 };
 
-export default QueryForm;
+export default SubscriptionAndFeedback;
