@@ -1,10 +1,27 @@
 import ReviewCarousel from "@/components/Reviews/ReviewCarousel";
+import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
-
+import { ReviewDocument } from "@/utils/Models";
 function EntityReviews() {
+  const [reviewData, setReviewData] = useState<ReviewDocument[]>([]);
+  const router = useRouter();
+  const { entity } = router.query;
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(`/api/review/?entity=${entity}`);
+      console.log("Response from server:", response.data);
+      setReviewData(response.data);
+    }
+    if (entity) {
+      fetchData();
+    }
+  }, [entity]);
+
+  console.log(reviewData);
   const count = [{ id: 1 }, { id: 2 }, { id: 3 }];
 
   const image = count.map((el) => (
@@ -45,13 +62,12 @@ function EntityReviews() {
           keyBoardControl={true}
           showDots={true}
           className="gd-carousel text-black dark:text-white mb-3 "
-          dotListClass="custom-dot-list-style "
-        >
+          dotListClass="custom-dot-list-style ">
           {image}
         </Carousel>
       </div>
       <p className=" text-xl  font-extrabold">Review</p>
-      <ReviewCarousel />
+      <ReviewCarousel data={reviewData} />
     </section>
   );
 }

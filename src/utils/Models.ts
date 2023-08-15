@@ -70,4 +70,30 @@ const marketPlaceSchema = new mongoose.Schema<IMarketPlace>({
 // Create the model
 const MarketPlaceModel =mongoose.models.MarketPlaceModel || mongoose.model<IMarketPlace>('MarketPlaceModel', marketPlaceSchema);
 
-export {Review,MarketPlaceModel,Papers};
+
+
+  export interface TestimonialData extends mongoose.Document{
+  name: string;
+  AdmissionNo: string;
+  Email: string;
+  suggestion: string;
+}
+
+// interface TestimonialDocument extends TestimonialData, Document {}
+
+const testimonialSchema = new mongoose.Schema<TestimonialData>(
+  {
+    name: { type: String, required: true },
+    AdmissionNo: { type: String, required: true },
+    Email: { type: String, required: true },
+    suggestion: { type: String, required: true },
+  },
+  { timestamps: true }
+);
+
+const Testimonial= mongoose.models.Testimonial || mongoose.model<TestimonialData>('Testimonial', testimonialSchema);
+
+
+
+
+export {Review,MarketPlaceModel,Testimonial,Papers};

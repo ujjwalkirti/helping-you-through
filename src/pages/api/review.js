@@ -3,31 +3,53 @@ import { Review } from "@/utils/Models"
 const reviews = [];
 import clientPromise from "@/lib/mongodb";
 export default async function handler(req, res) {
-  if (req.method === 'GET') {
-    return res.status(200).json({ "Heelo": "nitin lki maa ki chut" });
-  } else if (req.method === 'POST') {
-    try {
+  try {
+    const client = await clientPromise
+    const db = client.db("test-helping-you-through")
+    const collection = db.collection("Review")
+    if (req.method === 'GET') {
+      const { entity } = req.query;
+      if (entity) {
+        const parts = entity?.split('-');
+        const type = parts[0];
+        const typeName = parts[1];
+        console.log(type, typeName)
+        const query = {
+          $and: [
+            { category: type },
+            { about: typeName }
+          ]
+        };
+        const reviewsData= await collection.find(query).toArray()
+        return res.status(200).json(reviewsData);
+      } else {
+        // Handle the regular GET request
+        return res.status(200).json({ message: 'Received a regular GET request' });
+      }
+    } else if (req.method === 'POST') {
+      try {
+        const newReview = new Review({
+          name: req.body.name,
+          phoneno: req.body.phone,
+          email: req.body.email,
+          category: req.body.reviewAbout,
+          about: req.body.selected,
+          message: req.body.message
+        });
+        console.log(newReview)
+        const response = await collection.insertOne(newReview);
+        return res.status(201).json(response);
+      } catch (error) {
+        console.log(error.message);
+        return res.status(500).json(error);
+      }
 
-      const client = await clientPromise
-      const db = client.db("test-helping-you-through")
-      const collection = db.collection("Review")
-      const newReview = new Review({
-        name:req.body.name,
-        phoneno:req.body.phone,
-        email:req.body.email,
-        category:req.body.reviewAbout,
-        about:req.body.selected,
-        message:req.body.message
-      });
-     const response=  await collection.insertOne(newReview);
-      return res.status(201).json(response);
-    } catch (error) {
-      console.log(error.message);
-      return res.status(500).json(error);
+    } else {
+      // Handle unsupported methods
+      return res.status(405).json({ error: 'Method not allowed' });
     }
-
-  } else {
-    // Handle unsupported methods
-    return res.status(405).json({ error: 'Method not allowed' });
+  } catch (error) {
+    res.status(500).json(error);
   }
+
 }
