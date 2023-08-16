@@ -8,6 +8,7 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { SessionProvider } from "next-auth/react";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App({
   Component,
@@ -48,7 +49,7 @@ export default function App({
           <Navbar />
           <Component {...pageProps} />
           <Footer />
-        </div>
+<Analytics/>        </div>
       </ThemeProvider>
     </SessionProvider>
   );
