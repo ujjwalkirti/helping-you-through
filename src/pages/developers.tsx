@@ -1,9 +1,20 @@
 import DeveloperCard from "@/components/Developers/DeveloperCard";
 import { poppins } from "@/utils/Fonts";
+import { IDeveloper } from "@/utils/Models";
 import { developers } from "@/utils/dummy-data";
+import axios from "axios";
 import Head from "next/head";
-import React from "react";
+import React, { useEffect, useState } from "react";
 const Developers = () => {
+  const [developersData, setDevelopersData] = useState<IDeveloper[]>([]);
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(`/api/developers`);
+      console.log("Response from server:", response.data);
+      setDevelopersData(response.data);
+    }
+    fetchData();
+  }, [])
   return (
     <>
       <div className="">
@@ -19,13 +30,13 @@ const Developers = () => {
           </div>
           <div className="hidden w-10/12  mx-auto lg:block">
             <div className={`flex-wrap  flex justify-evenly `}>
-              {developers.map((developer, index) => {
+              {developersData.map((developer, index) => {
                 return (
                   <div
                     className={`my-6 rounded-xl ${
                       !(index == 0 || index == developers.length - 1)
                         ? Math.floor(index % 2)
-                          ? " bg-dgreen dark:bg-[white] "
+                          ? " bg-[#56e137] dark:bg-[#ffffff] "
                           : "bg-[orange]"
                         : null
                     }  ${
@@ -43,7 +54,7 @@ const Developers = () => {
           </div>
           <div className="lg:hidden w-10/12 mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2">
-              {developers.map((developer, index) => {
+              {developersData.map((developer, index) => {
                 return (
                   <div
                     className={`m-3 rounded-xl ${

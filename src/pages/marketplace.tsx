@@ -33,7 +33,7 @@ const MarketPlace = () => {
       </div>
 
       <p className="justify-centre mt-4 text-center text-xl font-semibold">Product</p>
-      {/* <div className="justify-items-center"> */}'
+      {/* <div className="justify-items-center"> */}
       <div >
         <ButtonGroup
           disableElevation

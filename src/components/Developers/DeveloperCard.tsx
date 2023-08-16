@@ -7,25 +7,15 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-type props = {
-  name: string;
-  designation: string;
-  position: string;
-  year: any;
-  branch: string;
-  imgUrl: string;
-  socials: string[];
-};
-
+import { IDeveloper } from "@/utils/Models";
 function DeveloperCard({
   name,
-  designation,
-  position,
-  year,
-  branch,
-  imgUrl,
-  socials,
-}: props) {
+  image,
+  role,
+  social,
+  quote,
+}: IDeveloper) {
+
   return (
     <>
       <div className="group [prespective:1000px]">
@@ -37,19 +27,19 @@ function DeveloperCard({
                   className="rounded-full flex mx-auto "
                   width={60}
                   height={60}
-                  src={imgUrl}
+                  src={image}
                   alt="pic"
                 />
               </div>
               <p className="text-center mb-3 font-semibold ">{name}</p>
               <div className="list-none text-[#606161]">
-                <ul className="w-10/12 flex mx-auto my-2">
-                  <li className="bg-lgreen rounded px-6">ROLE</li>
-                  <li className="mx-3 text-dark dark:text-white">{position}</li>
+                <ul className="w-10/12 flex items-center  mx-auto my-2">
+                  <li className="bg-[#cbeeb4]  rounded px-6">ROLE</li>
+                  <li className="mx-3 text-dark dark:text-white">{role}</li>
                 </ul>
-                <ul className="  w-10/12 flex mx-auto">
-                  <li className="bg-lgreen rounded px-6">TEAM</li>
-                  <li className="mx-3 text-dark dark:text-white">{year}</li>
+                <ul className="w-10/12 flex items-center mx-auto">
+                  <li className="bg-[#cbeeb4] rounded px-6">Quote</li>
+                  <li className="mx-1 text-dark dark:text-white">{quote}</li>
                 </ul>
               </div>
             </div>
@@ -59,10 +49,11 @@ function DeveloperCard({
               Contact {name}
             </p>
             <ul className=" list-none flex h-full  bottom-0 justify-evenly items-center mx-auto my-auto">
-              <GitHubIcon className="cursor-pointer text-black" />
-              <TwitterIcon color="primary" className="cursor-pointer" />
-              <InstagramIcon color="error" className="cursor-pointer" />
-              <LinkedInIcon color="primary" className="cursor-pointer" />
+
+             <Link href={social.github?social.github:""}> <GitHubIcon className="cursor-pointer text-black" /></Link>
+              <Link href={social.twitter?social.twitter:""}> <TwitterIcon color="primary" className="cursor-pointer" /></Link>
+              <Link href={social.instagram?social.instagram:""}> <InstagramIcon color="error" className="cursor-pointer" /></Link>
+              <Link href={social.linkedin?social.linkedin:""}> <LinkedInIcon color="primary" className="cursor-pointer" /></Link>
             </ul>
           </div>
         </div>

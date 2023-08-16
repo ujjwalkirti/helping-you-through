@@ -1,6 +1,21 @@
 import mongoose from "mongoose";
 
 // Define the schema interface
+export interface SocialLinks {
+  instagram?: string;
+  github?: string;
+  linkedin?: string;
+  twitter?: string;
+}
+
+export interface IDeveloper extends Document {
+  name: string;
+  image: string;
+  role: string;
+  social: SocialLinks;
+  quote: string;
+}
+
 export interface IMarketPlace extends mongoose.Document {
   name: string;
   phoneNo: number;
@@ -133,7 +148,21 @@ const Query =
 const Testimonial =
   mongoose.models.Testimonial ||
   mongoose.model<TestimonialData>("Testimonial", testimonialSchema);
+const developerSchema = new mongoose.Schema<IDeveloper>({
+  name: { type: String, required: true },
+  image: { type: String, required: true },
+  role: { type: String, required: true },
+  social: {
+    instagram: { type: String },
+    github: { type: String },
+    linkedin: { type: String },
+    twitter: { type: String },
+  },
+  quote: { type: String, required: true },
+});
+
+const Developer =  mongoose.models.Query || mongoose.model<IDeveloper>('Developer', developerSchema);
 
 // export default mongoose.model<ReplyDocument>("Reply", replySchema);
 
-export { Review, ProductsModel, Testimonial, Papers, Query, Reply };
+export { Review, ProductsModel, Testimonial, Papers, Query, Reply,Developer };
