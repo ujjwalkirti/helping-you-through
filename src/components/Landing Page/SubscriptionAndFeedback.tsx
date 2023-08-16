@@ -12,7 +12,6 @@ interface FeedbackFormData {
 }
 
 const SubscriptionAndFeedback = () => {
-  
   const [feedbackForm, setFeedbackForm] = useState<FeedbackFormData>({
     name: "",
     AdmissionNo: "",
@@ -54,7 +53,8 @@ const SubscriptionAndFeedback = () => {
       <div className="hidden md:block">
         {/* subscribe section */}
         <div
-          className={"w-full dark:bg-black  text-center " + poppins.className}>
+          className={"w-full dark:bg-black  text-center " + poppins.className}
+        >
           <div className="min-h-[70vh] flex flex-col justify-center">
             <div className="flex flex-col mx-auto w-5/12">
               <p className="text-[#20B15A]  pb-4">SUBSCRIBE</p>
@@ -75,7 +75,8 @@ const SubscriptionAndFeedback = () => {
               <Button
                 variant="contained"
                 color="warning"
-                className="text-white bg-[#FF8345] my-1 mx-1">
+                className="text-white bg-[#FF8345] my-1 mx-1"
+              >
                 Subscribe
               </Button>
             </div>
@@ -87,7 +88,8 @@ const SubscriptionAndFeedback = () => {
           className={
             "w-full text-[#044A42] dark:bg-black dark:text-[#20B15A] " +
             poppins.className
-          }>
+          }
+        >
           <div className="w-10/12 mx-auto flex ">
             <div className="w-6/12 flex-col">
               <Image
@@ -154,7 +156,8 @@ const SubscriptionAndFeedback = () => {
                     type="submit"
                     variant="contained"
                     color="warning"
-                    className="text-white bg-[#FF8345] mt-10 mx-1">
+                    className="text-white bg-[#FF8345] mt-10 mx-1"
+                  >
                     Send Message
                   </Button>
                 </form>
@@ -171,7 +174,8 @@ const SubscriptionAndFeedback = () => {
           className={
             " w-full flex justify-center items-center text-[#044A42] dark:bg-black dark:text-[#20B15A] " +
             poppins.className
-          }>
+          }
+        >
           <div className="flex-col justify-center">
             <div className="">
               <Image

@@ -1,4 +1,3 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { Reply } from "@/utils/Models";
 import clientPromise from "@/lib/mongodb";
 
