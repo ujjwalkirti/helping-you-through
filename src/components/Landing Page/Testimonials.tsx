@@ -1,44 +1,36 @@
 import { poppins } from "@/utils/Fonts";
 import { TestimonialData, responsive } from "@/utils/dummy-data";
-import { useTheme } from "next-themes";
 import Image from "next/image";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {useEffect ,useState } from "react"
-
+import { useEffect, useState } from "react";
 
 const Testimonials = () => {
-  const { theme } = useTheme();
-
   const [testimonialdata, setTestimonials] = useState([]);
-  const [updateUI,setupdateUI]= useState(false);
+  const [updateUI, setupdateUI] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/testimonial'); // Replace with the actual endpoint
+        const response = await fetch("/api/testimonial"); // Replace with the actual endpoint
         const data = await response.json();
         console.log(data);
         setTestimonials(data);
-      
       } catch (error) {
-        console.error('Error fetching testimonials:', error);
+        console.error("Error fetching testimonials:", error);
       }
     };
 
     fetchData();
     setupdateUI(true);
-    
   }, []);
 
-  useEffect(() => {
-    
-  },[updateUI]);
+  useEffect(() => {}, [updateUI]);
 
-  const testimonials = testimonialdata.map((el,index) => (
+  const testimonials = testimonialdata.map((el: any, index) => (
     <div
-      key={el._id}
+      key={index}
       className=" bg-white dark:bg-[#20B15A]  p-3 rounded-2xl shadow-md drop-shadow-lg  flex flex-col justify-between text-black dark:text-[white] "
     >
       <div>

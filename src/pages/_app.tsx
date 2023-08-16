@@ -49,7 +49,8 @@ export default function App({
           <Navbar />
           <Component {...pageProps} />
           <Footer />
-<Analytics/>        </div>
+          <Analytics />{" "}
+        </div>
       </ThemeProvider>
     </SessionProvider>
   );

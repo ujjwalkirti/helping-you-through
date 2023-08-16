@@ -19,7 +19,7 @@ interface TestimonialData {
 }
 
 const Quer: React.FC = () => {
-  
+
   const { theme } = useTheme();
   const [testimonialdata, setTestimonials] = useState<TestimonialData[]>([]);
   const [updateUI, setUpdateUI] = useState(false);
@@ -34,7 +34,7 @@ const Quer: React.FC = () => {
             ...testimonial,
             isReplyOpen: false,
             replyMessage: "", // Initialize reply message as empty
-           
+
           }))
         );
       } catch (error) {
@@ -64,13 +64,13 @@ const Quer: React.FC = () => {
   };
 
 
-   
+
     fetchData();
     fetchReplies();
     // postReply();
     setUpdateUI(true);
-  }, []);
-  
+  }, [testimonialdata]);
+
   const handleReplySubmit = async (index: number) => {
     const updatedTestimonials = [...testimonialdata];
     try {
@@ -119,7 +119,7 @@ const Quer: React.FC = () => {
 
 console.log(testimonialdata);
   const testimonials = testimonialdata.map((el, index) => (
-    
+
     <div
       key={el._id}
       className={`bg-white dark:bg-[#20B15A] p-3 rounded-2xl shadow-md drop-shadow-lg flex flex-col justify-between text-black dark:text-white ${
