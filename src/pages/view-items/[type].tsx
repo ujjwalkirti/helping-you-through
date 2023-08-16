@@ -1,20 +1,20 @@
-import ItemCard from "@/components/Marketplace/ItemCard";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import PhoneIcon from "@mui/icons-material/Phone";
 import SendIcon from "@mui/icons-material/Send";
-import { products } from "@/utils/dummy-data";
 import Head from "next/head";
 import axios from "axios";
-import { Router } from "lucide-react";
 import { useRouter } from "next/router";
-import { IMarketPlace } from '@/utils/Models'
+import { IMarketPlace } from "@/utils/Models";
+
+
+
 function MarketPlaceItemsBasedOnType() {
   const [VehicleDetails, setVehicleDetails] = useState<IMarketPlace[]>([]);
   const router = useRouter();
   const { type } = router.query;
-  const firstChar = type?.at(0)?.toUpperCase() ?? '';
+  const firstChar = type?.at(0)?.toUpperCase() ?? "";
   const sliceString = type?.slice(1);
 
   useEffect(() => {
@@ -26,8 +26,7 @@ function MarketPlaceItemsBasedOnType() {
     if (type) {
       fetchData();
     }
-
-  }, [type])
+  }, [type]);
   const items = VehicleDetails.map((item) => (
     <div
       key={item._id}
@@ -63,9 +62,9 @@ function MarketPlaceItemsBasedOnType() {
   ));
 
   return (
-    <div className="w-5/6 mx-auto ">
+    <div className="w-full px-2 md:w-5/6 mx-auto ">
       <Head>
-        <title>View Items for Sale</title>
+        <title>View {firstChar + sliceString} Items for Sale</title>
       </Head>
       <p className="flex justify-center text-3xl font-extrabold my-5 ">
         {firstChar + sliceString}

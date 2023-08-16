@@ -5,7 +5,6 @@ import {
   Avatar,
   FormControl,
   InputLabel,
-  Menu,
   MenuItem,
   Select,
   Switch,
@@ -14,8 +13,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { signIn, useSession } from "next-auth/react";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 const Navbar = () => {
+  const { data: session } = useSession();
+
   const { theme, setTheme } = useTheme();
   const [icon, setIcon] = useState(true);
   const [checked, setChecked] = useState(true);
@@ -26,6 +30,7 @@ const Navbar = () => {
     setTheme(theme === "light" ? "dark" : "light");
     setChecked(!checked);
   };
+
 
   return (
     <>
@@ -48,7 +53,7 @@ const Navbar = () => {
             <SearchIcon className="text-lg text-black" />
             <input
               placeholder="Search for PYQ's,Review's ,Old Book's"
-              className=" w-full bg-white  focus:outline-none px-1 overflow-hidden rounded-3xl bg-inherit "
+              className=" w-full bg-white  focus:outline-none px-1 overflow-hidden rounded-3xl bg-inherit dark:text-black"
             />
           </div>
           <div className=" w-5/12 flex  list-none justify-evenly items-center cursor-pointer">
@@ -68,10 +73,13 @@ const Navbar = () => {
             <li className="">Contact</li>
           </div>
           <div className="w-2/12 list-none flex items-center justify-evenly cursor-pointer">
-            <li className="">Login</li>
-            <li>
-              <Avatar />
-            </li>
+            {!session?.user ? (
+              <Button onClick={() => signIn("google")}>Sign-in</Button>
+            ) : (
+              <li>
+                <Avatar />
+              </li>
+            )}
             <li className="">
               <Switch checked={!checked} onChange={handleToggle} />
             </li>
@@ -80,24 +88,24 @@ const Navbar = () => {
       </div>
 
       {/* Responsiveness implementation */}
-      <div className={"w-full lg:hidden " + poppins.className}>
-        <div className="mx-auto flex justify-center items-center dark:bg-[#20B15A]  dark:text-white bg-[#d7f5dc] text-black">
-          <div className="w-2/12 relative flex items-center mt-[5px] ">
+      <div className={"w-full  lg:hidden " + poppins.className}>
+        <div className="mx-auto flex justify-between items-center dark:bg-[#20B15A]  dark:text-white bg-[#d7f5dc] text-black py-2 px-4">
+          <Link href={`/`} className="w-2/12 relative flex items-center">
             <Image
               className=" object-cover rounded-full"
-              width={30}
-              height={30}
+              width={40}
+              height={40}
               src="/logo.jpg"
               alt="Website's logo"
             />
-          </div>
-          <div className="w-8/12  rounded-3xl bg-white items-center cursor-pointer flex mx-auto mt-[5px] ">
+          </Link>
+          {/* <div className="w-full  rounded-3xl bg-white items-center cursor-pointer flex px-3 mx-auto mt-[5px] ">
             <SearchIcon className="text-lg text-black" />
             <input
               placeholder="Search for PYQ's,Review's ,Old Book's"
-              className=" w-full bg-white h-7 bg-inherit focus:outline-none px-2 overflow-hidden rounded-3xl "
+              className=" w-full bg-white h-full px-4 py-2 bg-inherit focus:outline-none overflow-hidden rounded-3xl "
             />
-          </div>
+          </div> */}
           {icon && (
             <div className="w-2/12">
               <MenuIcon
@@ -120,16 +128,23 @@ const Navbar = () => {
         </div>
 
         {!icon && (
-          <div className="absolute right-1 top-14 p-1">
-            <ul className="flex flex-col justify-evenly items-center cursor-pointer">
-              <li className="pb-2">Services</li>
-              <li className="pb-2">About</li>
-              <li className="pb-2">Contact</li>
-              <li className="pb-2">
-                <Avatar />
+          <div className="absolute right-1 top-14 p-2 dark:bg-white bg-black text-white dark:text-black w-1/2">
+            <ul className="flex flex-col justify-evenly items-start gap-4 cursor-pointer">
+              <li className="pb-2 border-b-2 w-full">Services</li>
+              <li className="pb-2 border-b-2 w-full">About</li>
+              <li className="pb-2 border-b-2 w-full">Contact</li>
+              <li className="pb-2 border-b-2 w-full">
+                {!session?.user ? (
+                  <span onClick={() => signIn("google")}>Sign-in</span>
+                ) : (
+                  <span className="flex items-center gap-2">
+                    <Avatar /> {session?.user?.name}
+                  </span>
+                )}
               </li>
               <li className="pb-2">
-                <Switch checked={!checked} onChange={handleToggle} />
+                <Switch checked={!checked} onChange={handleToggle} />{" "}
+                {theme + " Theme"}
               </li>
             </ul>
           </div>
