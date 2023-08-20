@@ -28,18 +28,18 @@ const Footer = () => {
         Helping you Through
       </h1>
       <div className="mx-auto hidden sm:flex justify-center items-baseline">
-        <p className="  text-center py-5 mx-5">
+        <p className="  text-center py-5 ">
           &quot;Elevating College Excellence: Your Trusted Online Resource for
           Student Support and Success!&quot;
         </p>
       </div>
       <div className="w-5/6 flex flex-col sm:flex-row items-center justify-end py-5 mx-auto">
-        <div className=" mx-auto flex flex-col justify-between w-full sm:w-fit">
+        <div className=" mx-auto flex flex-col">
           <p className="text-center pb-3 font-bold text-lg text-black dark:text-white underline sm:dark:text-black">
             Links
           </p>
-          <div className="flex justify-around  flex-col mx-auto   text-lg gap-y-1">
-            <div className="flex flex-col gap-y-1 ">
+          <div className="flex flex-row sm:flex-col w-full text-xs sm:text-lg divide-x divide-zinc-950 sm:divide-x-0">
+            <div className="flex flex-col ">
               <Link
                 href="/pyq"
                 className="ml-1 hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white "
@@ -52,18 +52,20 @@ const Footer = () => {
               >
                 ☞ Books And Stationaries
               </Link>
+            </div>
+            <div className="flex flex-col">
               <Link href="/">
                 <span className="px-1 inline-block hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">
                   ☞ Academic Calender
                 </span>
               </Link>
-            </div>
-            <div className="flex flex-col gap-y-1">
-            <Link href="/view-items/vehicle">
+              <Link href="/view-items/vehicle">
                 <span className="px-1 inline-block hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">
                   ☞ Vehicle For Sale
                 </span>
               </Link>
+            </div>
+            <div className="flex flex-col ">
               <Link href="/reviews">
                 <span className="px-1 inline-block hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">
                   ☞ Students Chapter and Hostel
@@ -79,10 +81,10 @@ const Footer = () => {
         </div>
 
         <div className=" flex flex-col justify-around  mx-auto">
-          <p className="text-center py-3 font-bold text-lg hidden sm:block   text-black dark:text-white underline sm:dark:text-black">
+          <p className="text-center py-3 font-bold text-lg  text-black dark:text-white underline sm:dark:text-black">
             Contact Us
           </p>
-          <div className="flex flex-row sm:flex-col mt-5 sm:mt-0">
+          <div className="flex flex-row sm:flex-col">
             <Link href="" className="pt-1 text-lg items-center mx-1 ">
               <LinkedInIcon className="mr-1 text-white text-4xl" />
               <span className="hidden sm:inline-block hover:underline hover:text-[#20B15A] hover:font-bold dark:hover:text-white ">
