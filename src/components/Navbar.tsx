@@ -41,7 +41,7 @@ const Navbar = () => {
         }
       >
         <div className="mx-auto flex justify-between items-center px-3 h-18 py-3">
-          <div className="w-10 h-10 relative flex pl-3 items-center ">
+          <div className="w-10 h-10 relative flex pl-3 items-center ml-4">
             <Image
               className=" rounded-full"
               fill
@@ -49,14 +49,14 @@ const Navbar = () => {
               alt="Website's logo"
             />
           </div>
-          <div className="rounded-3xl bg-white h-10  w-3/12 items-center cursor-pointer flex pl-3">
+          <div className="rounded-3xl bg-white h-10  w-3/12 lg:w-4/12 mx-auto items-center cursor-pointer flex pl-3">
             <SearchIcon className="text-lg text-black" />
             <input
-              placeholder="Search for PYQ's,Review's ,Old Book's"
+              placeholder="Search for PYQ's, Review's, Old Book's"
               className=" w-full bg-white  focus:outline-none px-1 overflow-hidden rounded-3xl bg-inherit dark:text-black"
             />
           </div>
-          <div className=" w-5/12 flex  list-none justify-evenly items-center cursor-pointer">
+          <div className=" w-4/12 flex  list-none justify-evenly items-center cursor-pointer">
             <li className="w-[33%]">
               <FormControl fullWidth>
                 <InputLabel>
@@ -76,8 +76,9 @@ const Navbar = () => {
             {!session?.user ? (
               <Button onClick={() => signIn("google")}>Sign-in</Button>
             ) : (
-              <li>
+              <li className="flex items-center gap-2">
                 <Avatar />
+                <p>{session?.user.name}</p>
               </li>
             )}
             <li className="">

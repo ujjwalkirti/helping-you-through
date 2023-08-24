@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <div
       className={
-        " mx-auto bg-[#d7f5dc] dark:bg-[#20B15A] pt-5" + poppins.className
+        " mx-auto bg-[#d7f5dc] dark:bg-[#20B15A] pt-5 " + poppins.className
       }
     >
       <Image
@@ -38,7 +38,7 @@ const Footer = () => {
           <p className="text-center pb-3 font-bold text-lg text-black dark:text-white underline sm:dark:text-black">
             Links
           </p>
-          <div className="flex flex-row sm:flex-col w-full text-xs sm:text-lg divide-x divide-zinc-950 sm:divide-x-0">
+          <div className="flex flex-col items-start w-full">
             <div className="flex flex-col ">
               <Link
                 href="/pyq"

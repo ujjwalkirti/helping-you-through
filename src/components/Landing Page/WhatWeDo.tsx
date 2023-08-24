@@ -57,7 +57,7 @@ function WhatWeDo(): JSX.Element {
               </div>
               <div
                 className={
-                  " text-black dark:text-white text-xl font-semibold mt-1 mb-1 ml-1 mr-1" +
+                  " text-black dark:text-white text-xl font-semibold mt-1 mb-1 ml-1 mr-1 " +
                   poppins.className
                 }
               >
@@ -195,7 +195,7 @@ function WhatWeDo(): JSX.Element {
 
               <div
                 className={
-                  " text-black dark:text-white text-xl font-semibold mt-1 mb-1 ml-1 mr-1" +
+                  " text-black dark:text-white text-xl font-semibold mt-1 mb-1 ml-1 mr-1 " +
                   poppins.className
                 }
               >
@@ -267,7 +267,7 @@ function WhatWeDo(): JSX.Element {
               </div>
               <div
                 className={
-                  " text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1" +
+                  " text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1 " +
                   poppins.className
                 }
               >
@@ -319,7 +319,7 @@ function WhatWeDo(): JSX.Element {
               </div>
               <div
                 className={
-                  " text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1" +
+                  " text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1 " +
                   poppins.className
                 }
               >
@@ -358,7 +358,7 @@ function WhatWeDo(): JSX.Element {
               </div>
               <div
                 className={
-                  " text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1" +
+                  " text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1 " +
                   poppins.className
                 }
               >
@@ -404,7 +404,7 @@ function WhatWeDo(): JSX.Element {
               </div>
               <div
                 className={
-                  " text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1" +
+                  " text-black dark:text-white text-base font-semibold mt-1 mb-3 ml-1 mr-1 " +
                   poppins.className
                 }
               >
